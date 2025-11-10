@@ -81,3 +81,9 @@
 - [x] Show all three metrics on single vertical scale
 - [x] Add visual markers for each benchmark
 - [x] Implement smooth animations
+
+## Fix Thermometer Chart Layout
+- [x] Fix overlapping elements in thermometer chart
+- [x] Ensure chart fits within container bounds
+- [x] Adjust marker positioning to prevent overflow
+- [x] Improve responsive layout
