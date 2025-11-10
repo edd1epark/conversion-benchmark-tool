@@ -47,7 +47,7 @@ export default function InputForm({ onSubmit }: InputFormProps) {
         <CardContent className="pt-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="traffic" className="text-base font-semibold bg-purple-100 text-purple-900 px-3 py-1.5 rounded-md inline-block">
+              <Label htmlFor="traffic" className="text-base font-semibold text-slate-900">
                 What is your current monthly traffic?
               </Label>
               <Input
@@ -63,7 +63,7 @@ export default function InputForm({ onSubmit }: InputFormProps) {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="conversions" className="text-base font-semibold bg-orange-100 text-orange-900 px-3 py-1.5 rounded-md inline-block">
+              <Label htmlFor="conversions" className="text-base font-semibold text-slate-900">
                 How many monthly conversions (demos/signups) are you getting through your website?
               </Label>
               <Input
@@ -79,7 +79,7 @@ export default function InputForm({ onSubmit }: InputFormProps) {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="type" className="text-base font-semibold bg-green-100 text-green-900 px-3 py-1.5 rounded-md inline-block">
+              <Label htmlFor="type" className="text-base font-semibold text-slate-900">
                 What is your primary conversion?
               </Label>
               <Select value={conversionType} onValueChange={(value: "demos" | "signups") => setConversionType(value)}>
