@@ -1,0 +1,20 @@
+<svg width="66" height="64" viewBox="0 0 66 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient X -->
+  <path d="M38.9994 30.729L16.2504 0H1.66383L24.771 30.834L0 64H14.0046L38.9994 30.729Z" fill="url(#paint0_radial)"/>
+  <!-- Black X parts -->
+  <path d="M60.6433 1.60868L44.4804 23.2983L38.9321 15.3768L48.9355 1.60868H60.6433Z" fill="#222222" stroke="#222222" stroke-width="1.61604"/>
+  <path d="M62.3973 63.9914H49.524L38.3442 48.2421L44.5849 40.0683L62.3973 63.9914Z" fill="#222222" stroke="#222222" stroke-width="1.61604"/>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientTransform="matrix(18.6594 61.6404 -72.0495 19.2139 2.58419 2.85144e-06)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4B4DD"/>
+      <stop offset="0.17" stop-color="#F0B3DD"/>
+      <stop offset="0.33" stop-color="#E4B1DD"/>
+      <stop offset="0.5" stop-color="#CFAEDF"/>
+      <stop offset="0.66" stop-color="#B3A9E0"/>
+      <stop offset="0.83" stop-color="#8FA3E3"/>
+      <stop offset="0.99" stop-color="#639CE5"/>
+      <stop offset="1" stop-color="#619CE6"/>
+    </radialGradient>
+  </defs>
+</svg>
+

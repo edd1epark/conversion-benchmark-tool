@@ -118,27 +118,9 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground min-h-screen;
+    @apply text-foreground min-h-screen;
+    background: linear-gradient(180deg, rgba(127, 166, 255, 0) 0%, rgba(127, 166, 255, 0.3) 100%), #F6F8FE;
     background-attachment: fixed;
-    position: relative;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
-    z-index: 0;
-  }
-  body > * {
-    position: relative;
-    z-index: 1;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),

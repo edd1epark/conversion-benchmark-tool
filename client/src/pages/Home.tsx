@@ -22,11 +22,42 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen py-8 md:py-12">
-      <div className="container max-w-7xl">
-        <div className="flex items-center gap-3 mb-8">
-          <img src={APP_LOGO} alt="Logo" className="h-12 w-12" />
-          <h1 className="text-2xl font-bold text-foreground">{APP_TITLE}</h1>
+    <div className="min-h-screen py-8 md:py-12 relative overflow-hidden">
+      {/* Bottom-left grid */}
+      <div 
+        className="absolute pointer-events-none" 
+        style={{ 
+          width: '2795.18px',
+          height: '1863.45px',
+          left: '-1520.47px',
+          bottom: '-604.56px',
+          zIndex: 0
+        }}
+      >
+        <img src="/grid-bottom-left.svg" alt="" style={{ width: '100%', height: '100%' }} />
+      </div>
+      
+      {/* Top-right grid */}
+      <div 
+        className="absolute pointer-events-none" 
+        style={{ 
+          width: '3726.9px',
+          height: '1397.63px',
+          right: '-864.47px',
+          top: '-84.62px',
+          zIndex: 0
+        }}
+      >
+        <img src="/grid-top-right.svg" alt="" style={{ width: '100%', height: '100%' }} />
+      </div>
+      
+      <div className="container max-w-7xl relative z-10">
+        <div className="flex items-center gap-4 mb-8">
+          <img src="/logo-complete.svg" alt="Logo" className="h-16 w-auto" />
+          <div>
+            <h1 className="text-4xl font-bold text-slate-900 mb-1">{APP_TITLE}</h1>
+            <p className="text-slate-600">Compare your conversion rates to B2B SaaS benchmarks</p>
+          </div>
         </div>
 
         {!showResults ? (
