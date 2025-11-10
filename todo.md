@@ -121,3 +121,9 @@
 - [x] Add "How can I find my conversion value?" question back
 - [x] Add info icon next to the question
 - [x] Keep help text always visible below
+
+## Thermometer Chart Usability Fixes
+- [x] Hide "Difference to B2B SaaS Average" card when user is above average
+- [x] Prevent marker overlap when CVR values are close
+- [x] Standardize all marker line lengths to be equal
+- [x] Improve marker positioning logic

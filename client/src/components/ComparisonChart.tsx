@@ -28,6 +28,28 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
   const demosGapToAverage = conversionsAtAverage - currentConversions;
   const demosGapToTop25 = conversionsAtTop25 - currentConversions;
 
+  // Check for overlapping markers (within 10% of scale)
+  const markersClose = Math.abs(userPosition - avgPosition) < 10 || 
+                       Math.abs(userPosition - topPosition) < 10 ||
+                       Math.abs(avgPosition - topPosition) < 10;
+
+  // Adjust marker positions to prevent overlap
+  const getAdjustedTransform = (basePosition: number, index: number) => {
+    if (!markersClose) return 'translateY(50%)';
+    
+    // Sort positions to determine stacking order
+    const positions = [
+      { pos: userPosition, idx: 0 },
+      { pos: avgPosition, idx: 1 },
+      { pos: topPosition, idx: 2 }
+    ].sort((a, b) => a.pos - b.pos);
+    
+    const stackIndex = positions.findIndex(p => p.idx === index);
+    const offset = stackIndex * 35; // 35px spacing between markers
+    
+    return `translateY(calc(50% + ${offset}px))`;
+  };
+
   return (
     <div className="space-y-4 w-full">
       <h3 className="font-bold text-lg mb-6">Conversion Rate Comparison</h3>
@@ -61,7 +83,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
             {/* Top 25% marker */}
             <div 
               className="absolute left-14 w-48 flex items-center transition-all duration-700"
-              style={{ bottom: `${topPosition}%`, transform: 'translateY(50%)' }}
+              style={{ bottom: `${topPosition}%`, transform: getAdjustedTransform(topPosition, 2) }}
             >
               <div className="w-16 h-1 bg-green-600 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
@@ -75,7 +97,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
             {/* B2B Average marker */}
             <div 
               className="absolute left-14 w-48 flex items-center transition-all duration-700"
-              style={{ bottom: `${avgPosition}%`, transform: 'translateY(50%)' }}
+              style={{ bottom: `${avgPosition}%`, transform: getAdjustedTransform(avgPosition, 1) }}
             >
               <div className="w-16 h-1 bg-orange-500 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
@@ -89,9 +111,9 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
             {/* User's CVR marker */}
             <div 
               className="absolute left-14 w-48 flex items-center transition-all duration-1000"
-              style={{ bottom: `${userPosition}%`, transform: 'translateY(50%)' }}
+              style={{ bottom: `${userPosition}%`, transform: getAdjustedTransform(userPosition, 0) }}
             >
-              <div className="w-16 h-1.5 bg-blue-600 rounded-full" />
+              <div className="w-16 h-1 bg-blue-600 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
                 <div className="bg-blue-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-lg">
                   Your CVR
@@ -105,25 +127,27 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
         {/* Gap Metrics */}
         <div className="flex-1 space-y-4 w-full lg:w-auto">
           <div className="space-y-3">
-            {/* Difference to B2B Average */}
-            <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
-              <div className="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-1">
-                Difference to B2B SaaS Average
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-baseline gap-2">
-                  <span className={`text-3xl font-bold ${diffToAverage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                    {diffToAverage >= 0 ? '+' : ''}{diffToAverage.toFixed(2)}%
-                  </span>
-                  <span className="text-sm text-slate-600">
-                    {diffToAverage >= 0 ? 'above' : 'below'} average
-                  </span>
+            {/* Difference to B2B Average - only show if below average */}
+            {diffToAverage < 0 && (
+              <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
+                <div className="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-1">
+                  Difference to B2B SaaS Average
                 </div>
-                <div className="text-sm text-orange-700 font-medium">
-                  {Math.abs(Math.round(demosGapToAverage))} {demosGapToAverage >= 0 ? 'fewer' : 'more'} demos/month needed
+                <div className="space-y-2">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-bold text-red-600">
+                      {diffToAverage.toFixed(2)}%
+                    </span>
+                    <span className="text-sm text-slate-600">
+                      below average
+                    </span>
+                  </div>
+                  <div className="text-sm text-orange-700 font-medium">
+                    {Math.abs(Math.round(demosGapToAverage))} more demos/month needed
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {/* Difference to Top 25% */}
             <div className="p-4 bg-green-50 rounded-lg border border-green-200">
