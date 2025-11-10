@@ -165,3 +165,8 @@
 - [x] Change "DIFFERENCE TO" to "VS." in gap metric cards
 - [x] Make percentage values next to chart markers more prominent (larger font, bolder)
 - [x] Change "B2B Avg" to "B2B SaaS Average" throughout the application
+
+## Update Demos Per Month Display
+- [x] Replace text "N more demos/month needed" with pill-style badge
+- [x] Badge should simply say "N demos/month"
+- [x] Apply to both gap metric cards (VS. B2B SaaS Average and VS. Top 25%)
