@@ -60,12 +60,9 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
               <div className="space-y-3 pt-6 border-t mt-6">
                 <h3 className="font-bold text-lg">Find pipeline impact:</h3>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Label htmlFor="cv" className="text-base font-semibold bg-blue-100 text-blue-900 px-3 py-1.5 rounded-md inline-flex items-center gap-2">
-                      Conversion Value ($)
-                      <Info className="h-4 w-4" />
-                    </Label>
-                  </div>
+                  <Label htmlFor="cv" className="text-base font-semibold bg-blue-100 text-blue-900 px-3 py-1.5 rounded-md inline-block">
+                    Conversion Value ($)
+                  </Label>
                   <Input
                     id="cv"
                     type="number"
@@ -75,6 +72,10 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
                     className="text-lg"
                     min="0"
                   />
+                  <div className="flex items-center gap-2 text-sm text-slate-700">
+                    <Info className="h-4 w-4 flex-shrink-0" />
+                    <span className="font-medium">How can I find my conversion value?</span>
+                  </div>
                   <div className="bg-muted p-3 rounded-md text-sm space-y-1">
                     <p><strong>For demos:</strong> LTV × Sales Close Rate</p>
                     <p><strong>For free trial signups:</strong> LTV × Free trial to paid user conversion rates</p>

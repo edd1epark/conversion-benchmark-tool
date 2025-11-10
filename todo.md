@@ -115,3 +115,9 @@
 - [x] Make help text always visible
 - [x] Add info icon next to conversion value label
 - [x] Improve visual hierarchy
+
+## Fix Conversion Value Section Layout
+- [x] Remove info icon from "Conversion Value ($)" label
+- [x] Add "How can I find my conversion value?" question back
+- [x] Add info icon next to the question
+- [x] Keep help text always visible below
