@@ -150,7 +150,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
                 }}
               >
                 <div className="bg-orange-500 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
-                  B2B SaaS Average
+                  B2B SaaS Avg
                 </div>
                 <span className="text-lg font-bold text-orange-600">{B2B_AVERAGE.toFixed(2)}%</span>
               </div>
@@ -184,7 +184,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
           {/* Only show B2B Average gap if user is below average */}
           {userCVR < B2B_AVERAGE && (
             <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-              <h4 className="text-sm font-semibold text-orange-800 mb-2">VS. B2B SAAS AVERAGE</h4>
+              <h4 className="text-sm font-semibold text-orange-800 mb-2">VS. B2B SAAS AVG</h4>
               <p className="text-4xl font-bold text-orange-600 mb-1">
                 {gapToAverage.toFixed(2)}%
               </p>

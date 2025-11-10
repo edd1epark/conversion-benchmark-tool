@@ -180,3 +180,11 @@
 - [x] Calculate revenue impact for gap metrics
 - [x] Display revenue alongside demos in pill badges (e.g., "280 demos/month • $1.4M revenue")
 - [x] Apply to both gap metric cards
+
+## Update Text Labels and Headlines
+- [x] Change "B2B SaaS Average" to "B2B SaaS Avg" in thermometer chart markers
+- [x] Change "B2B SaaS Average" to "B2B SaaS Avg" in gap metric card titles
+- [x] Update card title from "Your Conversion Rate Analysis" to "Conversion Rate Comparison"
+- [x] Add "Your Conversion Rate Analysis" as main page headline on results screen
+- [x] Hide original "Compare my Conversion Rate to B2B SaaS Benchmarks" headline on results page
+- [x] Hide subheadline on results page

@@ -51,7 +51,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
         <div className="space-y-6">
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl">Your Conversion Rate Analysis</CardTitle>
+              <CardTitle className="text-2xl">Conversion Rate Comparison</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <ComparisonChart userCVR={userCVR} monthlyTraffic={data.monthlyTraffic} conversionValue={cvValue} />
