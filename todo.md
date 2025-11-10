@@ -132,3 +132,9 @@
 - [x] Standardize all marker line lengths to be identical
 - [x] Fix stacking order logic to sort by actual CVR values
 - [x] Ensure markers display in correct vertical order
+
+## Debug Marker Rendering Issues
+- [x] Test with actual user values (10000 traffic, 250 conversions = 2.5% CVR)
+- [x] Verify all marker lines have identical width and height classes
+- [x] Debug stacking order calculation
+- [x] Fix any remaining visual inconsistencies

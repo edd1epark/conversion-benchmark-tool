@@ -37,7 +37,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
   const getAdjustedTransform = (value: number) => {
     if (!markersClose) return 'translateY(50%)';
     
-    // Sort positions by actual CVR value to determine stacking order
+    // Sort positions by actual CVR value (ascending: lowest to highest)
     const positions = [
       { value: userCVR, pos: userPosition },
       { value: B2B_AVERAGE, pos: avgPosition },
@@ -45,7 +45,9 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
     ].sort((a, b) => a.value - b.value);
     
     const stackIndex = positions.findIndex(p => p.value === value);
-    const offset = stackIndex * 35; // 35px spacing between markers
+    // Reverse the offset: highest value gets 0 offset (top), lowest gets max offset (bottom)
+    const reversedIndex = positions.length - 1 - stackIndex;
+    const offset = reversedIndex * 35; // 35px spacing between markers
     
     return `translateY(calc(50% + ${offset}px))`;
   };
@@ -85,7 +87,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
               className="absolute left-14 w-48 flex items-center transition-all duration-700"
               style={{ bottom: `${topPosition}%`, transform: getAdjustedTransform(TOP_25_PERCENT) }}
             >
-              <div className="w-16 h-1 bg-green-600 rounded-full" />
+              <div className="w-16 h-1 bg-green-600" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
                 <div className="bg-green-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
                   Top 25%
@@ -99,7 +101,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
               className="absolute left-14 w-48 flex items-center transition-all duration-700"
               style={{ bottom: `${avgPosition}%`, transform: getAdjustedTransform(B2B_AVERAGE) }}
             >
-              <div className="w-16 h-1 bg-orange-500 rounded-full" />
+              <div className="w-16 h-1 bg-orange-500" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
                 <div className="bg-orange-500 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
                   B2B Avg
@@ -113,7 +115,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
               className="absolute left-14 w-48 flex items-center transition-all duration-1000"
               style={{ bottom: `${userPosition}%`, transform: getAdjustedTransform(userCVR) }}
             >
-              <div className="w-16 h-1 bg-blue-600 rounded-full" />
+              <div className="w-16 h-1 bg-blue-600" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
                 <div className="bg-blue-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-lg">
                   Your CVR
