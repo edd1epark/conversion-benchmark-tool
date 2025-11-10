@@ -109,3 +109,9 @@
 ## Remove Empty Space Below Chart
 - [x] Remove unnecessary dividers and spacing
 - [x] Clean up layout after content removal
+
+## Conversion Value Help Text Improvements
+- [x] Remove click-to-reveal functionality
+- [x] Make help text always visible
+- [x] Add info icon next to conversion value label
+- [x] Improve visual hierarchy

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ComparisonChart from "@/components/ComparisonChart";
 import ProjectionGraph from "@/components/ProjectionGraph";
 import CalendlyWidget from "@/components/CalendlyWidget";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Info } from "lucide-react";
 
 interface ResultsScreenProps {
   data: {
@@ -23,7 +23,6 @@ const TOP_25_PERCENT = 5.3;
 
 export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
   const [conversionValue, setConversionValue] = useState("");
-  const [showHelp, setShowHelp] = useState(false);
 
   const userCVR = (data.monthlyConversions / data.monthlyTraffic) * 100;
   const cvValue = parseFloat(conversionValue) || 0;
@@ -61,9 +60,12 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
               <div className="space-y-3 pt-6 border-t mt-6">
                 <h3 className="font-bold text-lg">Find pipeline impact:</h3>
                 <div className="space-y-2">
-                  <Label htmlFor="cv" className="text-base font-semibold bg-blue-100 text-blue-900 px-3 py-1.5 rounded-md inline-block">
-                    Conversion Value ($)
-                  </Label>
+                  <div className="flex items-center gap-2">
+                    <Label htmlFor="cv" className="text-base font-semibold bg-blue-100 text-blue-900 px-3 py-1.5 rounded-md inline-flex items-center gap-2">
+                      Conversion Value ($)
+                      <Info className="h-4 w-4" />
+                    </Label>
+                  </div>
                   <Input
                     id="cv"
                     type="number"
@@ -73,19 +75,10 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
                     className="text-lg"
                     min="0"
                   />
-                  <button
-                    type="button"
-                    onClick={() => setShowHelp(!showHelp)}
-                    className="text-sm text-primary hover:underline"
-                  >
-                    How can I find my conversion value?
-                  </button>
-                  {showHelp && (
-                    <div className="bg-muted p-3 rounded-md text-sm space-y-1">
-                      <p><strong>For demos:</strong> LTV × Sales Close Rate</p>
-                      <p><strong>For free trial signups:</strong> LTV × Free trial to paid user conversion rates</p>
-                    </div>
-                  )}
+                  <div className="bg-muted p-3 rounded-md text-sm space-y-1">
+                    <p><strong>For demos:</strong> LTV × Sales Close Rate</p>
+                    <p><strong>For free trial signups:</strong> LTV × Free trial to paid user conversion rates</p>
+                  </div>
                 </div>
               </div>
             </CardContent>
