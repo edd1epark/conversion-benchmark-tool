@@ -58,8 +58,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
               <ComparisonChart userCVR={userCVR} monthlyTraffic={data.monthlyTraffic} />
 
               {/* Optional Pipeline Impact Section */}
-              <div className="pt-4 border-t"></div>
-              <div className="space-y-3 pt-4 border-t">
+              <div className="space-y-3 pt-6 border-t mt-6">
                 <h3 className="font-bold text-lg">Find pipeline impact:</h3>
                 <div className="space-y-2">
                   <Label htmlFor="cv" className="text-base font-semibold bg-blue-100 text-blue-900 px-3 py-1.5 rounded-md inline-block">

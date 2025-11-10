@@ -105,3 +105,7 @@
 - [x] Remove "Conversion Rate Gap" section
 - [x] Add demos per month metric to gap cards
 - [x] Calculate conversion difference in actual numbers
+
+## Remove Empty Space Below Chart
+- [x] Remove unnecessary dividers and spacing
+- [x] Clean up layout after content removal
