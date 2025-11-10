@@ -92,3 +92,10 @@
 - [x] Change "Your Rate" label to "Your CVR"
 - [x] Make progress fill bottom rounded to match thermometer shape
 - [x] Ensure fill aligns with circular bottom
+
+## Replace Legend with Gap Metrics
+- [x] Remove redundant legend explaining colors
+- [x] Add difference calculations to B2B SaaS average
+- [x] Add difference calculations to top 25%
+- [x] Make percentage markers on chart more prominent
+- [x] Display gaps in the right-side space

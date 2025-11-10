@@ -16,6 +16,10 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
   const avgPosition = getPosition(B2B_AVERAGE);
   const topPosition = getPosition(TOP_25_PERCENT);
 
+  // Calculate differences
+  const diffToAverage = userCVR - B2B_AVERAGE;
+  const diffToTop25 = userCVR - TOP_25_PERCENT;
+
   return (
     <div className="space-y-4 w-full">
       <h3 className="font-bold text-lg mb-6">Conversion Rate Comparison</h3>
@@ -53,10 +57,10 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
             >
               <div className="w-16 h-1 bg-green-600 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
-                <div className="bg-green-600 text-white px-2 py-1 rounded text-xs font-bold whitespace-nowrap">
+                <div className="bg-green-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
                   Top 25%
                 </div>
-                <span className="text-xs font-bold text-green-700">{TOP_25_PERCENT}%</span>
+                <span className="text-base font-bold text-green-700">{TOP_25_PERCENT}%</span>
               </div>
             </div>
 
@@ -67,10 +71,10 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
             >
               <div className="w-16 h-1 bg-orange-500 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
-                <div className="bg-orange-500 text-white px-2 py-1 rounded text-xs font-bold whitespace-nowrap">
+                <div className="bg-orange-500 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
                   B2B Avg
                 </div>
-                <span className="text-xs font-bold text-orange-700">{B2B_AVERAGE}%</span>
+                <span className="text-base font-bold text-orange-700">{B2B_AVERAGE}%</span>
               </div>
             </div>
 
@@ -81,36 +85,46 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
             >
               <div className="w-16 h-1.5 bg-blue-600 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
-                <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold whitespace-nowrap shadow-lg">
+                <div className="bg-blue-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-lg">
                   Your CVR
                 </div>
-                <span className="text-sm font-bold text-blue-700">{userCVR.toFixed(2)}%</span>
+                <span className="text-lg font-bold text-blue-700">{userCVR.toFixed(2)}%</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Legend */}
+        {/* Gap Metrics */}
         <div className="flex-1 space-y-4 w-full lg:w-auto">
-          <div className="flex items-center gap-3">
-            <div className="w-4 h-4 rounded-full bg-blue-600 flex-shrink-0" />
-            <div>
-              <div className="font-semibold text-sm">Your Conversion Rate</div>
-              <div className="text-xs text-slate-600">Current performance level</div>
+          <div className="space-y-3">
+            {/* Difference to B2B Average */}
+            <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
+              <div className="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-1">
+                Difference to B2B SaaS Average
+              </div>
+              <div className="flex items-baseline gap-2">
+                <span className={`text-3xl font-bold ${diffToAverage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  {diffToAverage >= 0 ? '+' : ''}{diffToAverage.toFixed(2)}%
+                </span>
+                <span className="text-sm text-slate-600">
+                  {diffToAverage >= 0 ? 'above' : 'below'} average
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-4 h-4 rounded-full bg-orange-500 flex-shrink-0" />
-            <div>
-              <div className="font-semibold text-sm">B2B SaaS Average</div>
-              <div className="text-xs text-slate-600">Industry standard benchmark</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-4 h-4 rounded-full bg-green-600 flex-shrink-0" />
-            <div>
-              <div className="font-semibold text-sm">Top 25% Companies</div>
-              <div className="text-xs text-slate-600">Best-in-class performance</div>
+
+            {/* Difference to Top 25% */}
+            <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+              <div className="text-xs font-semibold text-green-600 uppercase tracking-wide mb-1">
+                Difference to Top 25%
+              </div>
+              <div className="flex items-baseline gap-2">
+                <span className={`text-3xl font-bold ${diffToTop25 >= 0 ? 'text-green-600' : 'text-orange-600'}`}>
+                  {diffToTop25 >= 0 ? '+' : ''}{diffToTop25.toFixed(2)}%
+                </span>
+                <span className="text-sm text-slate-600">
+                  {diffToTop25 >= 0 ? 'above' : 'below'} top performers
+                </span>
+              </div>
             </div>
           </div>
         </div>
