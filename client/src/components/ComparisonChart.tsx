@@ -3,12 +3,13 @@ import { Info } from "lucide-react";
 interface ComparisonChartProps {
   userCVR: number;
   monthlyTraffic: number;
+  conversionValue?: number;
 }
 
 const B2B_AVERAGE = 2.3;
 const TOP_25_PERCENT = 5.3;
 
-export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonChartProps) {
+export default function ComparisonChart({ userCVR, monthlyTraffic, conversionValue = 0 }: ComparisonChartProps) {
   // Calculate positions on the scale (0-100%)
   const maxValue = Math.max(userCVR, TOP_25_PERCENT) * 1.3; // Add 30% padding at top
   const userPosition = (userCVR / maxValue) * 100;
@@ -22,6 +23,20 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
   // Calculate conversion differences
   const demosToAverage = Math.round((B2B_AVERAGE / 100) * monthlyTraffic - (userCVR / 100) * monthlyTraffic);
   const demosToTop = Math.round((TOP_25_PERCENT / 100) * monthlyTraffic - (userCVR / 100) * monthlyTraffic);
+  
+  // Calculate revenue impact (annual)
+  const revenueToAverage = conversionValue > 0 ? (demosToAverage * conversionValue * 12) : 0;
+  const revenueToTop = conversionValue > 0 ? (Math.abs(demosToTop) * conversionValue * 12) : 0;
+  
+  // Format revenue for display
+  const formatRevenue = (revenue: number) => {
+    if (revenue >= 1000000) {
+      return `$${(revenue / 1000000).toFixed(1)}M`;
+    } else if (revenue >= 1000) {
+      return `$${(revenue / 1000).toFixed(0)}K`;
+    }
+    return `$${revenue.toFixed(0)}`;
+  };
 
   // Get vertical offset for label when markers overlap
   const getLabelVerticalOffset = (value: number) => {
@@ -175,7 +190,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
               </p>
               <p className="text-sm text-orange-700 mb-3">below average</p>
               <div className="inline-block bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
-                {demosToAverage} demos/month
+                {demosToAverage} demos/month{conversionValue > 0 && ` • ${formatRevenue(revenueToAverage)}/year`}
               </div>
             </div>
           )}
@@ -190,7 +205,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
               {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
             <div className="inline-block bg-green-200 text-green-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
-              {Math.abs(demosToTop)} demos/month
+              {Math.abs(demosToTop)} demos/month{conversionValue > 0 && ` • ${formatRevenue(revenueToTop)}/year`}
             </div>
           </div>
         </div>

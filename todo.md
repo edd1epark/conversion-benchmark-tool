@@ -174,3 +174,9 @@
 ## Fix Pill Badge Text Wrapping
 - [x] Add whitespace-nowrap to pill badges
 - [x] Ensure "N demos/month" stays on single line
+
+## Add Revenue Metrics to Pill Badges
+- [x] Check if conversion value is entered
+- [x] Calculate revenue impact for gap metrics
+- [x] Display revenue alongside demos in pill badges (e.g., "280 demos/month • $1.4M revenue")
+- [x] Apply to both gap metric cards
