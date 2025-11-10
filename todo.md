@@ -99,3 +99,9 @@
 - [x] Add difference calculations to top 25%
 - [x] Make percentage markers on chart more prominent
 - [x] Display gaps in the right-side space
+
+## Remove Redundant Sections
+- [x] Remove "Your Conversion Rate" section below chart
+- [x] Remove "Conversion Rate Gap" section
+- [x] Add demos per month metric to gap cards
+- [x] Calculate conversion difference in actual numbers

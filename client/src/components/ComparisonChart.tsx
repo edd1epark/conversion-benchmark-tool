@@ -1,11 +1,12 @@
 interface ComparisonChartProps {
   userCVR: number;
+  monthlyTraffic: number;
 }
 
 const B2B_AVERAGE = 2.3;
 const TOP_25_PERCENT = 5.3;
 
-export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
+export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonChartProps) {
   const maxValue = Math.max(userCVR, TOP_25_PERCENT) * 1.3;
   
   const getPosition = (value: number) => {
@@ -19,6 +20,13 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
   // Calculate differences
   const diffToAverage = userCVR - B2B_AVERAGE;
   const diffToTop25 = userCVR - TOP_25_PERCENT;
+  
+  // Calculate conversion differences in actual numbers
+  const conversionsAtAverage = (B2B_AVERAGE / 100) * monthlyTraffic;
+  const conversionsAtTop25 = (TOP_25_PERCENT / 100) * monthlyTraffic;
+  const currentConversions = (userCVR / 100) * monthlyTraffic;
+  const demosGapToAverage = conversionsAtAverage - currentConversions;
+  const demosGapToTop25 = conversionsAtTop25 - currentConversions;
 
   return (
     <div className="space-y-4 w-full">
@@ -102,13 +110,18 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
               <div className="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-1">
                 Difference to B2B SaaS Average
               </div>
-              <div className="flex items-baseline gap-2">
-                <span className={`text-3xl font-bold ${diffToAverage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                  {diffToAverage >= 0 ? '+' : ''}{diffToAverage.toFixed(2)}%
-                </span>
-                <span className="text-sm text-slate-600">
-                  {diffToAverage >= 0 ? 'above' : 'below'} average
-                </span>
+              <div className="space-y-2">
+                <div className="flex items-baseline gap-2">
+                  <span className={`text-3xl font-bold ${diffToAverage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    {diffToAverage >= 0 ? '+' : ''}{diffToAverage.toFixed(2)}%
+                  </span>
+                  <span className="text-sm text-slate-600">
+                    {diffToAverage >= 0 ? 'above' : 'below'} average
+                  </span>
+                </div>
+                <div className="text-sm text-orange-700 font-medium">
+                  {Math.abs(Math.round(demosGapToAverage))} {demosGapToAverage >= 0 ? 'fewer' : 'more'} demos/month needed
+                </div>
               </div>
             </div>
 
@@ -117,13 +130,18 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
               <div className="text-xs font-semibold text-green-600 uppercase tracking-wide mb-1">
                 Difference to Top 25%
               </div>
-              <div className="flex items-baseline gap-2">
-                <span className={`text-3xl font-bold ${diffToTop25 >= 0 ? 'text-green-600' : 'text-orange-600'}`}>
-                  {diffToTop25 >= 0 ? '+' : ''}{diffToTop25.toFixed(2)}%
-                </span>
-                <span className="text-sm text-slate-600">
-                  {diffToTop25 >= 0 ? 'above' : 'below'} top performers
-                </span>
+              <div className="space-y-2">
+                <div className="flex items-baseline gap-2">
+                  <span className={`text-3xl font-bold ${diffToTop25 >= 0 ? 'text-green-600' : 'text-orange-600'}`}>
+                    {diffToTop25 >= 0 ? '+' : ''}{diffToTop25.toFixed(2)}%
+                  </span>
+                  <span className="text-sm text-slate-600">
+                    {diffToTop25 >= 0 ? 'above' : 'below'} top performers
+                  </span>
+                </div>
+                <div className="text-sm text-green-700 font-medium">
+                  {Math.abs(Math.round(demosGapToTop25))} {demosGapToTop25 >= 0 ? 'fewer' : 'more'} demos/month needed
+                </div>
               </div>
             </div>
           </div>

@@ -55,64 +55,10 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
               <CardTitle className="text-2xl">Your Conversion Rate Analysis</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <ComparisonChart userCVR={userCVR} />
-
-              <div className="space-y-4 pt-4 border-t">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">Your Conversion Rate:</span>
-                  <span className="text-2xl font-bold text-primary">{userCVR.toFixed(2)}%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">B2B SaaS Average:</span>
-                  <span className="text-xl font-semibold text-muted-foreground">{B2B_AVERAGE}%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">Top 25% Companies:</span>
-                  <span className="text-xl font-semibold text-muted-foreground">{TOP_25_PERCENT}%</span>
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-4 border-t">
-                <h3 className="font-bold text-lg">Conversion Rate Gaps</h3>
-                {gapToAverage > 0 && (
-                  <div className="bg-orange-50 p-4 rounded-lg">
-                    <p className="text-sm font-semibold text-orange-900">Gap to B2B Average</p>
-                    <p className="text-2xl font-bold text-orange-700">{gapToAverage.toFixed(2)}%</p>
-                    <p className="text-sm text-orange-800 mt-1">
-                      {Math.round(additionalConversionsToAverage)} more {data.conversionType}/month needed
-                    </p>
-                    {cvValue > 0 && (
-                      <p className="text-sm font-semibold text-orange-900 mt-2">
-                        Pipeline Impact: ${pipelineImpactAverage.toLocaleString()}/month
-                      </p>
-                    )}
-                  </div>
-                )}
-                {gapToTop25 > 0 && (
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-sm font-semibold text-blue-900">Gap to Top 25%</p>
-                    <p className="text-2xl font-bold text-blue-700">{gapToTop25.toFixed(2)}%</p>
-                    <p className="text-sm text-blue-800 mt-1">
-                      {Math.round(additionalConversionsToTop25)} more {data.conversionType}/month needed
-                    </p>
-                    {cvValue > 0 && (
-                      <p className="text-sm font-semibold text-blue-900 mt-2">
-                        Pipeline Impact: ${pipelineImpactTop25.toLocaleString()}/month
-                      </p>
-                    )}
-                  </div>
-                )}
-                {gapToAverage <= 0 && gapToTop25 <= 0 && (
-                  <div className="bg-green-50 p-4 rounded-lg">
-                    <p className="text-sm font-semibold text-green-900">🎉 Excellent Performance!</p>
-                    <p className="text-sm text-green-800">
-                      Your conversion rate exceeds top 25% of B2B SaaS companies
-                    </p>
-                  </div>
-                )}
-              </div>
+              <ComparisonChart userCVR={userCVR} monthlyTraffic={data.monthlyTraffic} />
 
               {/* Optional Pipeline Impact Section */}
+              <div className="pt-4 border-t"></div>
               <div className="space-y-3 pt-4 border-t">
                 <h3 className="font-bold text-lg">Find pipeline impact:</h3>
                 <div className="space-y-2">
