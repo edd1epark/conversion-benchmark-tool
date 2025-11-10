@@ -26,7 +26,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
   // Get vertical offset for label when markers overlap
   const getLabelVerticalOffset = (value: number) => {
     const OVERLAP_THRESHOLD = 10; // 10% of scale
-    const STACK_SPACING = 30; // 30px spacing between stacked labels
+    const STACK_SPACING = 18; // 18px spacing between stacked labels
     
     // Check which markers are close to this one
     let offset = 0;

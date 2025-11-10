@@ -156,3 +156,7 @@
 - [x] Top 25% should not move if it's far from other markers
 - [x] Reduce spacing between stacked labels (closer together)
 - [x] Check each marker pair individually for overlap
+
+## Reduce Stacking Spacing
+- [x] Change STACK_SPACING from 30px to smaller value (15-20px)
+- [x] Ensure labels remain readable but closer together
