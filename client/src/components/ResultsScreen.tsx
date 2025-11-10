@@ -56,81 +56,6 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
             <CardContent className="space-y-6">
               <ComparisonChart userCVR={userCVR} monthlyTraffic={data.monthlyTraffic} conversionValue={cvValue} />
 
-              {/* 30% CVR Increase Impact Section */}
-              <div className="space-y-4 pt-6 border-t mt-6">
-                <h3 className="font-bold text-lg">30% CVR Increase Impact</h3>
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-lg p-6 space-y-4">
-                  {/* New CVR */}
-                  <div>
-                    <p className="text-sm font-semibold text-blue-800 mb-1">New Conversion Rate</p>
-                    <p className="text-3xl font-bold text-blue-900">{(userCVR * 1.3).toFixed(2)}%</p>
-                    <p className="text-xs text-blue-700">+{(userCVR * 0.3).toFixed(2)}% increase</p>
-                  </div>
-
-                  {/* Monthly Impact */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div className="bg-white rounded-lg p-4 shadow-sm">
-                      <p className="text-xs font-semibold text-slate-600 mb-1">Monthly Impact</p>
-                      <p className="text-2xl font-bold text-slate-900">
-                        {Math.round((userCVR * 1.3 / 100) * data.monthlyTraffic - (userCVR / 100) * data.monthlyTraffic)}
-                      </p>
-                      <p className="text-xs text-slate-600">more {data.conversionType}/month</p>
-                      {cvValue > 0 && (
-                        <p className="text-sm font-semibold text-green-700 mt-2">
-                          {(() => {
-                            const monthlyDiff = Math.round((userCVR * 1.3 / 100) * data.monthlyTraffic - (userCVR / 100) * data.monthlyTraffic);
-                            const revenue = monthlyDiff * cvValue;
-                            if (revenue >= 1000000) return `$${(revenue / 1000000).toFixed(1)}M`;
-                            if (revenue >= 1000) return `$${(revenue / 1000).toFixed(0)}K`;
-                            return `$${revenue.toFixed(0)}`;
-                          })()}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* 3-Month Impact */}
-                    <div className="bg-white rounded-lg p-4 shadow-sm">
-                      <p className="text-xs font-semibold text-slate-600 mb-1">3-Month Impact</p>
-                      <p className="text-2xl font-bold text-slate-900">
-                        {Math.round(((userCVR * 1.3 / 100) * data.monthlyTraffic - (userCVR / 100) * data.monthlyTraffic) * 3)}
-                      </p>
-                      <p className="text-xs text-slate-600">more {data.conversionType}</p>
-                      {cvValue > 0 && (
-                        <p className="text-sm font-semibold text-green-700 mt-2">
-                          {(() => {
-                            const monthlyDiff = Math.round((userCVR * 1.3 / 100) * data.monthlyTraffic - (userCVR / 100) * data.monthlyTraffic);
-                            const revenue = monthlyDiff * cvValue * 3;
-                            if (revenue >= 1000000) return `$${(revenue / 1000000).toFixed(1)}M`;
-                            if (revenue >= 1000) return `$${(revenue / 1000).toFixed(0)}K`;
-                            return `$${revenue.toFixed(0)}`;
-                          })()}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* 6-Month Impact */}
-                    <div className="bg-white rounded-lg p-4 shadow-sm">
-                      <p className="text-xs font-semibold text-slate-600 mb-1">6-Month Impact</p>
-                      <p className="text-2xl font-bold text-slate-900">
-                        {Math.round(((userCVR * 1.3 / 100) * data.monthlyTraffic - (userCVR / 100) * data.monthlyTraffic) * 6)}
-                      </p>
-                      <p className="text-xs text-slate-600">more {data.conversionType}</p>
-                      {cvValue > 0 && (
-                        <p className="text-sm font-semibold text-green-700 mt-2">
-                          {(() => {
-                            const monthlyDiff = Math.round((userCVR * 1.3 / 100) * data.monthlyTraffic - (userCVR / 100) * data.monthlyTraffic);
-                            const revenue = monthlyDiff * cvValue * 6;
-                            if (revenue >= 1000000) return `$${(revenue / 1000000).toFixed(1)}M`;
-                            if (revenue >= 1000) return `$${(revenue / 1000).toFixed(0)}K`;
-                            return `$${revenue.toFixed(0)}`;
-                          })()}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* Optional Pipeline Impact Section */}
               <div className="space-y-3 pt-6 border-t mt-6">
                 <h3 className="font-bold text-lg">Find pipeline impact:</h3>
@@ -162,7 +87,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
         </div>
 
         {/* Right Side - Calendly Widget */}
-        <div className="flex flex-col">
+        <div>
           <CalendlyWidget />
         </div>
       </div>
