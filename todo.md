@@ -160,3 +160,8 @@
 ## Reduce Stacking Spacing
 - [x] Change STACK_SPACING from 30px to smaller value (15-20px)
 - [x] Ensure labels remain readable but closer together
+
+## Update Labels and Styling
+- [x] Change "DIFFERENCE TO" to "VS." in gap metric cards
+- [x] Make percentage values next to chart markers more prominent (larger font, bolder)
+- [x] Change "B2B Avg" to "B2B SaaS Average" throughout the application

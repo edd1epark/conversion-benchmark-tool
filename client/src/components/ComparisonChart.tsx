@@ -116,7 +116,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
                 <div className="bg-green-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
                   Top 25%
                 </div>
-                <span className="text-base font-bold text-green-700">{TOP_25_PERCENT}%</span>
+                <span className="text-lg font-bold text-green-700">{TOP_25_PERCENT.toFixed(2)}%</span>
               </div>
             </div>
 
@@ -135,9 +135,9 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
                 }}
               >
                 <div className="bg-orange-500 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
-                  B2B Avg
+                  B2B SaaS Average
                 </div>
-                <span className="text-base font-bold text-orange-700">{B2B_AVERAGE}%</span>
+                <span className="text-lg font-bold text-orange-600">{B2B_AVERAGE.toFixed(2)}%</span>
               </div>
             </div>
 
@@ -169,7 +169,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
           {/* Only show B2B Average gap if user is below average */}
           {userCVR < B2B_AVERAGE && (
             <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-              <h4 className="text-sm font-semibold text-orange-800 mb-2">DIFFERENCE TO B2B SAAS AVERAGE</h4>
+              <h4 className="text-sm font-semibold text-orange-800 mb-2">VS. B2B SAAS AVERAGE</h4>
               <p className="text-4xl font-bold text-orange-600 mb-1">
                 {gapToAverage.toFixed(2)}%
               </p>
@@ -182,7 +182,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
 
           {/* Always show Top 25% gap */}
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
-            <h4 className="text-sm font-semibold text-green-800 mb-2">DIFFERENCE TO TOP 25%</h4>
+            <h4 className="text-sm font-semibold text-green-800 mb-2">VS. TOP 25%</h4>
             <p className="text-4xl font-bold text-orange-600 mb-1">
               {gapToTop.toFixed(2)}%
             </p>
