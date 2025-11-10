@@ -150,3 +150,9 @@
 - [x] Stack labels in a column when markers overlap
 - [x] Ensure labels remain readable and don't overlap each other
 - [x] Keep line indicators at correct scale positions
+
+## Fix Stacking Logic for Overlapping Markers
+- [x] Only stack markers that are actually close to each other
+- [x] Top 25% should not move if it's far from other markers
+- [x] Reduce spacing between stacked labels (closer together)
+- [x] Check each marker pair individually for overlap

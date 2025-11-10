@@ -23,25 +23,50 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
   const demosToAverage = Math.round((B2B_AVERAGE / 100) * monthlyTraffic - (userCVR / 100) * monthlyTraffic);
   const demosToTop = Math.round((TOP_25_PERCENT / 100) * monthlyTraffic - (userCVR / 100) * monthlyTraffic);
 
-  // Check for overlapping markers (within 10% of scale)
-  const markersClose = Math.abs(userPosition - avgPosition) < 10 || 
-                       Math.abs(userPosition - topPosition) < 10 ||
-                       Math.abs(avgPosition - topPosition) < 10;
-
   // Get vertical offset for label when markers overlap
   const getLabelVerticalOffset = (value: number) => {
-    if (!markersClose) return 0;
+    const OVERLAP_THRESHOLD = 10; // 10% of scale
+    const STACK_SPACING = 30; // 30px spacing between stacked labels
     
-    // Sort by CVR value to determine stacking order (lowest to highest)
-    const markers = [
-      { value: userCVR, name: 'user' },
-      { value: B2B_AVERAGE, name: 'avg' },
-      { value: TOP_25_PERCENT, name: 'top' }
-    ].sort((a, b) => a.value - b.value);
+    // Check which markers are close to this one
+    let offset = 0;
     
-    const index = markers.findIndex(m => m.value === value);
-    // Stack labels vertically: lowest value at bottom (0), each higher value moves up
-    return index * -40; // -40px spacing between stacked labels (negative moves up)
+    if (value === userCVR) {
+      // Check if user CVR is close to B2B average
+      if (Math.abs(userPosition - avgPosition) < OVERLAP_THRESHOLD) {
+        // User is close to avg, move up if user is higher
+        if (userCVR > B2B_AVERAGE) offset = -STACK_SPACING;
+      }
+      // Check if user CVR is close to top 25%
+      if (Math.abs(userPosition - topPosition) < OVERLAP_THRESHOLD) {
+        // User is close to top, move down if user is lower
+        if (userCVR < TOP_25_PERCENT) offset = STACK_SPACING;
+      }
+    } else if (value === B2B_AVERAGE) {
+      // Check if B2B avg is close to user CVR
+      if (Math.abs(avgPosition - userPosition) < OVERLAP_THRESHOLD) {
+        // Avg is close to user, move down if avg is lower
+        if (B2B_AVERAGE < userCVR) offset = STACK_SPACING;
+      }
+      // Check if B2B avg is close to top 25%
+      if (Math.abs(avgPosition - topPosition) < OVERLAP_THRESHOLD) {
+        // Avg is close to top, move down if avg is lower
+        if (B2B_AVERAGE < TOP_25_PERCENT) offset = STACK_SPACING;
+      }
+    } else if (value === TOP_25_PERCENT) {
+      // Check if top 25% is close to user CVR
+      if (Math.abs(topPosition - userPosition) < OVERLAP_THRESHOLD) {
+        // Top is close to user, move up if top is higher
+        if (TOP_25_PERCENT > userCVR) offset = -STACK_SPACING;
+      }
+      // Check if top 25% is close to B2B avg
+      if (Math.abs(topPosition - avgPosition) < OVERLAP_THRESHOLD) {
+        // Top is close to avg, move up if top is higher
+        if (TOP_25_PERCENT > B2B_AVERAGE) offset = -STACK_SPACING;
+      }
+    }
+    
+    return offset;
   };
 
   return (
@@ -84,7 +109,8 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
                 className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
-                  transform: `translateY(${getLabelVerticalOffset(TOP_25_PERCENT)}px)`
+                  transform: `translateY(${getLabelVerticalOffset(TOP_25_PERCENT)}px)`,
+                  transition: 'transform 0.3s ease'
                 }}
               >
                 <div className="bg-green-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
@@ -104,7 +130,8 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
                 className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
-                  transform: `translateY(${getLabelVerticalOffset(B2B_AVERAGE)}px)`
+                  transform: `translateY(${getLabelVerticalOffset(B2B_AVERAGE)}px)`,
+                  transition: 'transform 0.3s ease'
                 }}
               >
                 <div className="bg-orange-500 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
@@ -124,7 +151,8 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
                 className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
-                  transform: `translateY(${getLabelVerticalOffset(userCVR)}px)`
+                  transform: `translateY(${getLabelVerticalOffset(userCVR)}px)`,
+                  transition: 'transform 0.3s ease'
                 }}
               >
                 <div className="bg-blue-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-lg">
