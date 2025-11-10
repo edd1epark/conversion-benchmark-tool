@@ -44,15 +44,7 @@ export default function InputForm({ onSubmit }: InputFormProps) {
   return (
     <div className="flex justify-center items-start min-h-[60vh]">
       <Card className="w-full max-w-2xl shadow-lg">
-        <CardHeader className="text-center space-y-2">
-          <CardTitle className="text-3xl md:text-4xl font-bold">
-            Compare my Conversion Rate to B2B SaaS Benchmarks
-          </CardTitle>
-          <CardDescription className="text-base md:text-lg">
-            This tool helps you compare your website visitor to demo/signup conversion rates to B2B SaaS benchmarks. Input your numbers to see results
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+        <CardContent className="pt-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="traffic" className="text-base font-semibold bg-purple-100 text-purple-900 px-3 py-1.5 rounded-md inline-block">

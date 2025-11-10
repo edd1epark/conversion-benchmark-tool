@@ -52,12 +52,17 @@ export default function Home() {
       </div>
       
       <div className="container max-w-7xl relative z-10">
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-4 mb-12">
           <img src="/logo-complete.svg" alt="Logo" className="h-16 w-auto" />
-          <div>
-            <h1 className="text-4xl font-bold text-slate-900 mb-1">{APP_TITLE}</h1>
-            <p className="text-slate-600">Compare your conversion rates to B2B SaaS benchmarks</p>
-          </div>
+        </div>
+
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            Compare my Conversion Rate to B2B SaaS Benchmarks
+          </h1>
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+            This tool helps you compare your website visitor to demo/signup conversion rates to B2B SaaS benchmarks. Input your numbers to see results
+          </p>
         </div>
 
         {!showResults ? (
