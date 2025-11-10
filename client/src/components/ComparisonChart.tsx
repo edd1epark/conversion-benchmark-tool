@@ -178,7 +178,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
         </div>
 
         {/* Gap Metrics */}
-        <div className="flex-1 space-y-4 w-full lg:w-auto">
+        <div className="flex-1 space-y-4 w-full lg:w-auto lg:min-w-[400px]">
           {/* Only show B2B Average gap if user is below average */}
           {userCVR < B2B_AVERAGE && (
             <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
@@ -187,8 +187,9 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
                 {gapToAverage.toFixed(2)}%
               </p>
               <p className="text-sm text-orange-700 mb-3">below average</p>
-              <div className="inline-block bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
-                {demosToAverage} demos/month{conversionValue > 0 && ` • ${formatRevenue(revenueToAverage)}/year`}
+              <div className="inline-flex items-center gap-1 bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
+                <span>{demosToAverage} demos/month</span>
+                {conversionValue > 0 && <span> • {formatRevenue(revenueToAverage)}/year</span>}
               </div>
             </div>
           )}
@@ -202,8 +203,9 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             <p className="text-sm text-green-700 mb-3">
               {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
-            <div className="inline-block bg-green-200 text-green-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
-              {Math.abs(demosToTop)} demos/month{conversionValue > 0 && ` • ${formatRevenue(revenueToTop)}/year`}
+            <div className="inline-flex items-center gap-1 bg-green-200 text-green-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
+              <span>{Math.abs(demosToTop)} demos/month</span>
+              {conversionValue > 0 && <span> • {formatRevenue(revenueToTop)}/year</span>}
             </div>
           </div>
         </div>

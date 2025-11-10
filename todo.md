@@ -198,3 +198,8 @@
 - [x] Display 3-month cumulative impact
 - [x] Display 6-month cumulative impact
 - [x] Add revenue metrics for all timeframes when conversion value is entered
+
+## Fix Chart and Calendly Issues
+- [x] Fix chart pill badge positioning when conversion value is entered (badges overlapping)
+- [x] Adjust layout to handle dynamic revenue text in pill badges
+- [x] Stretch Calendly iframe to full container height to prevent content cutoff

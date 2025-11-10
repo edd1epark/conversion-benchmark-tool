@@ -25,11 +25,11 @@ export default function CalendlyWidget() {
           Book a strategy call and get personalized tips on how you can boost your website conversions.
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1 flex flex-col">
         <div
-          className="calendly-inline-widget"
+          className="calendly-inline-widget flex-1"
           data-url="https://calendly.com/eddie-groxweb/strategy-call-homepage?hide_gdpr_banner=1&text_color=222222"
-          style={{ minWidth: "320px", height: "700px" }}
+          style={{ minWidth: "320px", minHeight: "800px" }}
         />
       </CardContent>
     </Card>

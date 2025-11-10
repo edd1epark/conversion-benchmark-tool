@@ -162,7 +162,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
         </div>
 
         {/* Right Side - Calendly Widget */}
-        <div>
+        <div className="flex flex-col">
           <CalendlyWidget />
         </div>
       </div>
