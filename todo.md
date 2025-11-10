@@ -87,3 +87,8 @@
 - [x] Ensure chart fits within container bounds
 - [x] Adjust marker positioning to prevent overflow
 - [x] Improve responsive layout
+
+## Thermometer Chart Improvements
+- [x] Change "Your Rate" label to "Your CVR"
+- [x] Make progress fill bottom rounded to match thermometer shape
+- [x] Ensure fill aligns with circular bottom

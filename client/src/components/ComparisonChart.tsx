@@ -35,10 +35,13 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
 
             {/* Thermometer track */}
             <div className="absolute left-14 w-16 h-full bg-gradient-to-t from-slate-200 via-slate-100 to-slate-50 rounded-full border-2 border-slate-300">
-              {/* Fill based on user's CVR */}
+              {/* Fill based on user's CVR with rounded bottom */}
               <div 
-                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 rounded-full transition-all duration-1000 ease-out"
-                style={{ height: `${userPosition}%` }}
+                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-500 via-blue-400 to-blue-300 transition-all duration-1000 ease-out"
+                style={{ 
+                  height: `${userPosition}%`,
+                  borderRadius: userPosition < 100 ? '0 0 9999px 9999px' : '9999px'
+                }}
               />
             </div>
 
@@ -79,7 +82,7 @@ export default function ComparisonChart({ userCVR }: ComparisonChartProps) {
               <div className="w-16 h-1.5 bg-blue-600 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
                 <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-bold whitespace-nowrap shadow-lg">
-                  Your Rate
+                  Your CVR
                 </div>
                 <span className="text-sm font-bold text-blue-700">{userCVR.toFixed(2)}%</span>
               </div>
