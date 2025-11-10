@@ -204,3 +204,13 @@
 - [x] Change revenue metric from per-year to per-month
 - [x] Ensure pills wrap properly without breaking card layout
 - [x] Apply to both VS. B2B SAAS AVG and VS. TOP 25% cards
+
+## Add 30% CVR Increase Impact Section
+- [x] Create section below thermometer chart in ResultsScreen
+- [x] Calculate new CVR after 30% increase
+- [x] Display new CVR percentage
+- [x] Show monthly demos/signups impact
+- [x] Show 3-month cumulative impact
+- [x] Show 6-month cumulative impact
+- [x] Add revenue metrics for monthly, 3-month, and 6-month when conversion value is entered
+- [x] Use attractive gradient design consistent with existing sections
