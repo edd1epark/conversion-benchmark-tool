@@ -1,28 +1,40 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { useState } from "react";
 import { APP_LOGO, APP_TITLE } from "@/const";
-import { Streamdown } from 'streamdown';
+import InputForm from "@/components/InputForm";
+import ResultsScreen from "@/components/ResultsScreen";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const [showResults, setShowResults] = useState(false);
+  const [formData, setFormData] = useState({
+    monthlyTraffic: 0,
+    monthlyConversions: 0,
+    conversionType: "demos" as "demos" | "signups",
+    conversionValue: 0,
+  });
 
-  // Use APP_LOGO (as image src) and APP_TITLE if needed
+  const handleSubmit = (data: typeof formData) => {
+    setFormData(data);
+    setShowResults(true);
+  };
+
+  const handleBack = () => {
+    setShowResults(false);
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
+    <div className="min-h-screen py-8 md:py-12">
+      <div className="container max-w-7xl">
+        <div className="flex items-center gap-3 mb-8">
+          <img src={APP_LOGO} alt="Logo" className="h-12 w-12" />
+          <h1 className="text-2xl font-bold text-foreground">{APP_TITLE}</h1>
+        </div>
+
+        {!showResults ? (
+          <InputForm onSubmit={handleSubmit} />
+        ) : (
+          <ResultsScreen data={formData} onBack={handleBack} />
+        )}
+      </div>
     </div>
   );
 }
