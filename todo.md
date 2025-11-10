@@ -82,8 +82,8 @@
 - [x] Add visual markers for each benchmark
 - [x] Implement smooth animations
 
-## Fix Thermometer Chart Layout
-- [x] Fix overlapping elements in thermometer chart
-- [x] Ensure chart fits within container bounds
-- [x] Adjust marker positioning to prevent overflow
-- [x] Improve responsive layout
+## Vertical Bar Chart Visualization (Option 1)
+- [x] Replace thermometer chart with vertical bar chart
+- [x] Show three side-by-side bars for comparison
+- [x] Add labels and percentages on each bar
+- [x] Implement smooth animations
