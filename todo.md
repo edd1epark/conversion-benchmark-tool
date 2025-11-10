@@ -144,3 +144,9 @@
 - [x] Keep line indicators at correct scale positions
 - [x] Stack label boxes horizontally (to the right) when overlapping
 - [x] Ensure markers always align with scale percentages
+
+## Change Label Stacking to Vertical
+- [x] Change horizontal label offset to vertical offset
+- [x] Stack labels in a column when markers overlap
+- [x] Ensure labels remain readable and don't overlap each other
+- [x] Keep line indicators at correct scale positions

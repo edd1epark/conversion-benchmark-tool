@@ -28,11 +28,11 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
                        Math.abs(userPosition - topPosition) < 10 ||
                        Math.abs(avgPosition - topPosition) < 10;
 
-  // Get horizontal offset for label when markers overlap
-  const getLabelOffset = (value: number) => {
+  // Get vertical offset for label when markers overlap
+  const getLabelVerticalOffset = (value: number) => {
     if (!markersClose) return 0;
     
-    // Sort by CVR value to determine stacking order
+    // Sort by CVR value to determine stacking order (lowest to highest)
     const markers = [
       { value: userCVR, name: 'user' },
       { value: B2B_AVERAGE, name: 'avg' },
@@ -40,8 +40,8 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
     ].sort((a, b) => a.value - b.value);
     
     const index = markers.findIndex(m => m.value === value);
-    // Stack labels horizontally: each subsequent label moves further right
-    return index * 120; // 120px spacing between stacked labels
+    // Stack labels vertically: lowest value at bottom (0), each higher value moves up
+    return index * -40; // -40px spacing between stacked labels (negative moves up)
   };
 
   return (
@@ -51,7 +51,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 w-full">
         {/* Thermometer container with proper spacing */}
         <div className="relative h-96 w-full lg:w-auto flex justify-center lg:justify-start">
-          <div className="relative h-96 w-[500px]">
+          <div className="relative h-96 w-80">
             {/* Scale markers on the left */}
             <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-500 w-12 text-right pr-2">
               <span>{maxValue.toFixed(1)}%</span>
@@ -82,7 +82,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
               <div className="w-16 h-1 bg-green-600" />
               <div 
                 className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
-                style={{ marginLeft: `${8 + getLabelOffset(TOP_25_PERCENT)}px` }}
+                style={{ 
+                  marginLeft: '8px',
+                  transform: `translateY(${getLabelVerticalOffset(TOP_25_PERCENT)}px)`
+                }}
               >
                 <div className="bg-green-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
                   Top 25%
@@ -99,7 +102,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
               <div className="w-16 h-1 bg-orange-500" />
               <div 
                 className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
-                style={{ marginLeft: `${8 + getLabelOffset(B2B_AVERAGE)}px` }}
+                style={{ 
+                  marginLeft: '8px',
+                  transform: `translateY(${getLabelVerticalOffset(B2B_AVERAGE)}px)`
+                }}
               >
                 <div className="bg-orange-500 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md">
                   B2B Avg
@@ -116,7 +122,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
               <div className="w-16 h-1 bg-blue-600" />
               <div 
                 className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
-                style={{ marginLeft: `${8 + getLabelOffset(userCVR)}px` }}
+                style={{ 
+                  marginLeft: '8px',
+                  transform: `translateY(${getLabelVerticalOffset(userCVR)}px)`
+                }}
               >
                 <div className="bg-blue-600 text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-lg">
                   Your CVR
