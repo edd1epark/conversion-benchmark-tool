@@ -188,3 +188,13 @@
 - [x] Add "Your Conversion Rate Analysis" as main page headline on results screen
 - [x] Hide original "Compare my Conversion Rate to B2B SaaS Benchmarks" headline on results page
 - [x] Hide subheadline on results page
+
+## Fix Chart Layout Overlay Bug (ROLLBACK)
+- [x] Rolled back to version b4292667 to restore working chart layout
+- [x] Gap metric cards now properly positioned to right of thermometer
+- [x] Previous "fix" attempt caused overlay issue - resolved by rollback
+
+## Fix Calendly Height
+- [x] Increase Calendly iframe height to 800px
+- [x] Make Card component flex column
+- [x] Make CardContent flex to fill available space
