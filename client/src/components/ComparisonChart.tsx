@@ -189,8 +189,15 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
                 {gapToAverage.toFixed(2)}%
               </p>
               <p className="text-sm text-orange-700 mb-3">below average</p>
-              <div className="inline-block bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
-                {demosToAverage} demos/month{conversionValue > 0 && ` • ${formatRevenue(revenueToAverage)}/year`}
+              <div className="flex flex-wrap gap-2">
+                <div className="bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
+                  {demosToAverage} demos/month
+                </div>
+                {conversionValue > 0 && (
+                  <div className="bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
+                    {formatRevenue(revenueToAverage / 12)}/month
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -204,8 +211,15 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             <p className="text-sm text-green-700 mb-3">
               {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
-            <div className="inline-block bg-green-200 text-green-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
-              {Math.abs(demosToTop)} demos/month{conversionValue > 0 && ` • ${formatRevenue(revenueToTop)}/year`}
+            <div className="flex flex-wrap gap-2">
+              <div className="bg-green-200 text-green-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
+                {Math.abs(demosToTop)} demos/month
+              </div>
+              {conversionValue > 0 && (
+                <div className="bg-green-200 text-green-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
+                  {formatRevenue(revenueToTop / 12)}/month
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -198,3 +198,9 @@
 - [x] Increase Calendly iframe height to 800px
 - [x] Make Card component flex column
 - [x] Make CardContent flex to fill available space
+
+## Fix Pill Badge Layout with Revenue Metrics
+- [x] Split metrics into two separate pill badges (demos on first line, revenue on second line)
+- [x] Change revenue metric from per-year to per-month
+- [x] Ensure pills wrap properly without breaking card layout
+- [x] Apply to both VS. B2B SAAS AVG and VS. TOP 25% cards
