@@ -138,3 +138,9 @@
 - [x] Verify all marker lines have identical width and height classes
 - [x] Debug stacking order calculation
 - [x] Fix any remaining visual inconsistencies
+
+## Fix Marker Overlap Logic
+- [x] Remove vertical offset from markers
+- [x] Keep line indicators at correct scale positions
+- [x] Stack label boxes horizontally (to the right) when overlapping
+- [x] Ensure markers always align with scale percentages
