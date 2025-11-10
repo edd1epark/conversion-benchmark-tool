@@ -174,7 +174,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
                 {gapToAverage.toFixed(2)}%
               </p>
               <p className="text-sm text-orange-700 mb-3">below average</p>
-              <div className="inline-block bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-semibold">
+              <div className="inline-block bg-orange-200 text-orange-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
                 {demosToAverage} demos/month
               </div>
             </div>
@@ -189,7 +189,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
             <p className="text-sm text-green-700 mb-3">
               {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
-            <div className="inline-block bg-green-200 text-green-800 px-4 py-2 rounded-full font-semibold">
+            <div className="inline-block bg-green-200 text-green-800 px-4 py-2 rounded-full font-semibold whitespace-nowrap">
               {Math.abs(demosToTop)} demos/month
             </div>
           </div>

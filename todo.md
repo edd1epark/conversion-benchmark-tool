@@ -170,3 +170,7 @@
 - [x] Replace text "N more demos/month needed" with pill-style badge
 - [x] Badge should simply say "N demos/month"
 - [x] Apply to both gap metric cards (VS. B2B SaaS Average and VS. Top 25%)
+
+## Fix Pill Badge Text Wrapping
+- [x] Add whitespace-nowrap to pill badges
+- [x] Ensure "N demos/month" stays on single line
