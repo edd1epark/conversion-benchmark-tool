@@ -34,17 +34,17 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
                        Math.abs(avgPosition - topPosition) < 10;
 
   // Adjust marker positions to prevent overlap
-  const getAdjustedTransform = (basePosition: number, index: number) => {
+  const getAdjustedTransform = (value: number) => {
     if (!markersClose) return 'translateY(50%)';
     
-    // Sort positions to determine stacking order
+    // Sort positions by actual CVR value to determine stacking order
     const positions = [
-      { pos: userPosition, idx: 0 },
-      { pos: avgPosition, idx: 1 },
-      { pos: topPosition, idx: 2 }
-    ].sort((a, b) => a.pos - b.pos);
+      { value: userCVR, pos: userPosition },
+      { value: B2B_AVERAGE, pos: avgPosition },
+      { value: TOP_25_PERCENT, pos: topPosition }
+    ].sort((a, b) => a.value - b.value);
     
-    const stackIndex = positions.findIndex(p => p.idx === index);
+    const stackIndex = positions.findIndex(p => p.value === value);
     const offset = stackIndex * 35; // 35px spacing between markers
     
     return `translateY(calc(50% + ${offset}px))`;
@@ -83,7 +83,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
             {/* Top 25% marker */}
             <div 
               className="absolute left-14 w-48 flex items-center transition-all duration-700"
-              style={{ bottom: `${topPosition}%`, transform: getAdjustedTransform(topPosition, 2) }}
+              style={{ bottom: `${topPosition}%`, transform: getAdjustedTransform(TOP_25_PERCENT) }}
             >
               <div className="w-16 h-1 bg-green-600 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
@@ -97,7 +97,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
             {/* B2B Average marker */}
             <div 
               className="absolute left-14 w-48 flex items-center transition-all duration-700"
-              style={{ bottom: `${avgPosition}%`, transform: getAdjustedTransform(avgPosition, 1) }}
+              style={{ bottom: `${avgPosition}%`, transform: getAdjustedTransform(B2B_AVERAGE) }}
             >
               <div className="w-16 h-1 bg-orange-500 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">
@@ -111,7 +111,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic }: ComparisonC
             {/* User's CVR marker */}
             <div 
               className="absolute left-14 w-48 flex items-center transition-all duration-1000"
-              style={{ bottom: `${userPosition}%`, transform: getAdjustedTransform(userPosition, 0) }}
+              style={{ bottom: `${userPosition}%`, transform: getAdjustedTransform(userCVR) }}
             >
               <div className="w-16 h-1 bg-blue-600 rounded-full" />
               <div className="ml-2 flex items-center gap-2 flex-shrink-0">

@@ -127,3 +127,8 @@
 - [x] Prevent marker overlap when CVR values are close
 - [x] Standardize all marker line lengths to be equal
 - [x] Improve marker positioning logic
+
+## Fix Marker Line Lengths and Stacking Order
+- [x] Standardize all marker line lengths to be identical
+- [x] Fix stacking order logic to sort by actual CVR values
+- [x] Ensure markers display in correct vertical order
