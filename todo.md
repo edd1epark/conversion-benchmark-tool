@@ -81,9 +81,3 @@
 - [x] Show all three metrics on single vertical scale
 - [x] Add visual markers for each benchmark
 - [x] Implement smooth animations
-
-## Vertical Bar Chart Visualization (Option 1)
-- [x] Replace thermometer chart with vertical bar chart
-- [x] Show three side-by-side bars for comparison
-- [x] Add labels and percentages on each bar
-- [x] Implement smooth animations
