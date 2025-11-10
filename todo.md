@@ -188,3 +188,13 @@
 - [x] Add "Your Conversion Rate Analysis" as main page headline on results screen
 - [x] Hide original "Compare my Conversion Rate to B2B SaaS Benchmarks" headline on results page
 - [x] Hide subheadline on results page
+
+## Update Headlines and Add Impact Section
+- [x] Change results page headline from "Your Conversion Rate Analysis" to "Your Conversion Rate Report"
+- [x] Remove duplicate "Conversion Rate Comparison" headline inside the card
+- [x] Create "30% CVR Increase Impact" section below the chart
+- [x] Show new CVR after 30% increase
+- [x] Display monthly demos/signups impact
+- [x] Display 3-month cumulative impact
+- [x] Display 6-month cumulative impact
+- [x] Add revenue metrics for all timeframes when conversion value is entered

@@ -86,8 +86,6 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
 
   return (
     <div className="space-y-4 w-full">
-      <h3 className="font-bold text-lg mb-6">Conversion Rate Comparison</h3>
-      
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 w-full">
         {/* Thermometer container with proper spacing */}
         <div className="relative h-96 w-full lg:w-auto flex justify-center lg:justify-start">
