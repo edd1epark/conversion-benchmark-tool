@@ -468,3 +468,9 @@
 - [x] Metrics go back inline (flex-row) at md breakpoint
 - [x] Remove md:ml-20 margin since metrics now wrap, preventing overlap
 - [x] Test at 540px, 650px, 768px to verify proper layout
+
+## Increase Gap at 768-1024px and Full-Width VS Modules on Mobile
+- [x] Increase gap from md:gap-10 to md:gap-16 (64px) for better spacing at 768-1024px
+- [x] Add w-full to VS modules container for full-width on mobile (<540px)
+- [x] Add sm:w-auto to restore auto-width at 540px+ when side-by-side
+- [x] Test at mobile (<540px), 768px, and 1024px to verify improvements
