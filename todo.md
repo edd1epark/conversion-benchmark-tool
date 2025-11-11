@@ -439,3 +439,11 @@
 - [x] Changed VS modules max-width from max-w-2xl to max-w-lg for more restrictive width
 - [x] Increased gap in single-column: gap-6 (base/md), lg:gap-4, xl:gap-6
 - [x] Test in browser to confirm metrics inline and VS modules at reasonable width
+
+## Fix VS Module Overlap at 768-1024px Range
+- [x] VS modules were stretching with flex-[4] causing overlap with conversion metrics
+- [x] Changed VS modules container to "hug" content (removed flex-[4], min-w-0, max-w-lg)
+- [x] Used w-auto to let VS modules size based on content width
+- [x] Increased gap at md breakpoint from gap-6 to md:gap-10 for 768-1024px range
+- [x] Gap progression: gap-6 (base), md:gap-10 (768-1024px), lg:gap-4, xl:gap-6
+- [x] Test at 768-1024px to verify no overlap and VS modules at reasonable width
