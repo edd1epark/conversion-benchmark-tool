@@ -1,4 +1,5 @@
 import { Info } from "lucide-react";
+import { useState, useEffect } from 'react';
 
 interface ComparisonChartProps {
   userCVR: number;
@@ -11,6 +12,13 @@ const B2B_AVERAGE = 2.3;
 const TOP_25_PERCENT = 5.3;
 
 export default function ComparisonChart({ userCVR, monthlyTraffic, conversionValue = 0, conversionType }: ComparisonChartProps) {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1280);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   // Calculate positions on the scale (0-100%)
   const maxValue = Math.max(userCVR, TOP_25_PERCENT) * 1.3; // Add 30% padding at top
   const userPosition = (userCVR / maxValue) * 100;
@@ -56,7 +64,9 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
   // Get vertical offset for label when markers overlap
   const getLabelVerticalOffset = (value: number) => {
     const OVERLAP_THRESHOLD = 10; // 10% of scale
-    const STACK_SPACING = 18; // 18px spacing between stacked labels
+    // Increase spacing at lg breakpoint (1024-1280px) where metrics wrap vertically
+    const isLgBreakpoint = windowWidth >= 1024 && windowWidth < 1280;
+    const STACK_SPACING = isLgBreakpoint ? 60 : 18; // 60px for wrapped metrics, 18px for inline
     
     // Check which markers are close to this one
     let offset = 0;

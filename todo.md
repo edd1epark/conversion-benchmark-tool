@@ -496,3 +496,10 @@
 - [x] Keep metrics inline again at 1280px+ (xl)
 - [x] Change VS module font sizes from text-2xl md:text-3xl lg:text-4xl to text-4xl (consistent large size)
 - [x] Test at 768px, 1024px, 1280px to verify correct wrapping and consistent typography
+
+## Prevent Wrapped Metric Overlap with Dynamic Vertical Offset
+- [x] Analyze current getLabelVerticalOffset logic and overlap detection
+- [x] Implement breakpoint-aware offset calculation (larger spacing at lg when metrics wrap)
+- [x] Use window.innerWidth with resize listener to determine current breakpoint
+- [x] Increase vertical offset from 18px to 60px at lg (1024-1280px) to account for wrapped metric height
+- [x] Test with close conversion rates (e.g., 2.2%, 2.3%, 2.4%) at lg breakpoint to verify no overlap
