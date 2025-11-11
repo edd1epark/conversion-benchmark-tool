@@ -85,8 +85,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
     } else if (value === B2B_AVERAGE) {
       // Check if B2B avg is close to user CVR
       if (Math.abs(avgPosition - userPosition) < OVERLAP_THRESHOLD) {
-        // Avg is close to user, move down if avg is lower
-        if (B2B_AVERAGE < userCVR) offset = STACK_SPACING;
+        // Avg is close to user, move up if avg is higher (to avoid covering user's metric below)
+        if (B2B_AVERAGE > userCVR) offset = -STACK_SPACING;
+        // Move down if avg is lower
+        else if (B2B_AVERAGE < userCVR) offset = STACK_SPACING;
       }
       // Check if B2B avg is close to top 25%
       if (Math.abs(avgPosition - topPosition) < OVERLAP_THRESHOLD) {

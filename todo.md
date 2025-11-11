@@ -530,3 +530,10 @@
 - [x] Test with 1.5% vs 2.3% (0.8% difference, ~10.7% of scale) to verify overlap is caught
 - [x] Test with 2.5% vs 2.3% (0.2% difference, ~2.7% of scale) to verify overlap is caught
 - [x] Verify markers don't separate excessively when far apart (e.g., 1.5% vs 5.3%)
+
+## Debug Why Offset Isn't Being Applied
+- [x] Read full getLabelVerticalOffset function to understand overlap detection logic
+- [x] Check if offset is being calculated correctly for 1.5% vs 2.3% case
+- [x] Identify root cause: B2B Average offset logic was backwards (checked < instead of >)
+- [x] Fix: Change B2B Average to move up when higher than user CVR
+- [x] Test with 1.5% CVR scenario to verify fix works
