@@ -417,3 +417,10 @@
 - [x] Keep w-80 at xl+ when metrics are inline and need more horizontal space
 - [x] This frees up 64-96px of space for VS modules at constrained breakpoints
 - [x] Test at 1024px to verify VS modules finally expand without text breaking
+
+## Optimize 768-1023px Breakpoint Range
+- [x] Increase gap at md breakpoint to prevent VS module overlap with marker indicators
+- [x] Change from md:gap-3 to md:gap-6 for better breathing room
+- [x] Gap progression now: gap-4 (base), md:gap-6 (768px), lg:gap-4 (1024px), xl:gap-6 (1280px+)
+- [x] Test at 768px to verify no overlap and proper visual balance
+- [x] Verify 1024px still works correctly after changes

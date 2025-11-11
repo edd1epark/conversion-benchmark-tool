@@ -101,7 +101,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
 
   return (
     <div className="space-y-4 w-full">
-      <div className="flex flex-col md:flex-row items-start md:items-start gap-4 md:gap-3 lg:gap-4 xl:gap-6 w-full">
+      <div className="flex flex-col md:flex-row items-start md:items-start gap-4 md:gap-6 lg:gap-4 xl:gap-6 w-full">
         {/* Thermometer container with proper spacing */}
         <div className="relative h-96 w-full md:w-auto flex justify-center md:justify-start">
           <div className="relative h-96 w-80 md:w-56 lg:w-64 xl:w-80">
