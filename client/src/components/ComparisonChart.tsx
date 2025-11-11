@@ -4,12 +4,13 @@ interface ComparisonChartProps {
   userCVR: number;
   monthlyTraffic: number;
   conversionValue?: number;
+  conversionType: "demos" | "signups";
 }
 
 const B2B_AVERAGE = 2.3;
 const TOP_25_PERCENT = 5.3;
 
-export default function ComparisonChart({ userCVR, monthlyTraffic, conversionValue = 0 }: ComparisonChartProps) {
+export default function ComparisonChart({ userCVR, monthlyTraffic, conversionValue = 0, conversionType }: ComparisonChartProps) {
   // Calculate positions on the scale (0-100%)
   const maxValue = Math.max(userCVR, TOP_25_PERCENT) * 1.3; // Add 30% padding at top
   const userPosition = (userCVR / maxValue) * 100;
@@ -203,10 +204,12 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
               {Math.abs(ratioToAverage).toFixed(0)}% {userCVR >= B2B_AVERAGE ? 'above' : 'below'} average
             </p>
               <div className="flex flex-wrap gap-2">
-                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
-                  {demosToAverage} demos/month
-                </div>
-                {conversionValue > 0 && (
+                {demosToAverage > 0 && (
+                  <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
+                    {demosToAverage} {conversionType}/month
+                  </div>
+                )}
+                {conversionValue > 0 && demosToAverage > 0 && (
                   <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
                     {formatRevenue(revenueToAverage / 12)}/month
                   </div>
@@ -224,10 +227,12 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
               {Math.abs(ratioToTop).toFixed(0)}% {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
             <div className="flex flex-wrap gap-2">
-              <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
-                {Math.abs(demosToTop)} demos/month
-              </div>
-              {conversionValue > 0 && (
+              {demosToTop > 0 && (
+                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
+                  {Math.abs(demosToTop)} {conversionType}/month
+                </div>
+              )}
+              {conversionValue > 0 && demosToTop > 0 && (
                 <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
                   {formatRevenue(revenueToTop / 12)}/month
                 </div>

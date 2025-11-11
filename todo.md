@@ -325,3 +325,9 @@
 - [x] Replace incorrect custom logo with actual Grox Logo.svg file
 - [x] Reduce max-width of headline container so "B2B SaaS Benchmarks" wraps to next line on desktop
 - [x] Ensure logo displays correctly with proper sizing
+
+## Dynamic Conversion Type Labels and Pill Visibility
+- [x] Update VS. cards to show "signups/month" when user selects "Signups" as conversion type
+- [x] Update VS. cards to show "demos/month" when user selects "Demos" as conversion type
+- [x] Hide conversion pill badge when user CVR is above the benchmark (no negative values)
+- [x] Only show conversion pill when user is below benchmark and needs improvement
