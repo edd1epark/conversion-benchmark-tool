@@ -453,3 +453,10 @@
 - [x] Push VS modules further right to prevent overlap with thermometer markers
 - [x] Restore large text sizes (text-2xl/text-3xl/text-4xl) for VS modules at sub-1024px
 - [x] Test at 768-1024px to verify no overlap and proper text sizing
+
+## Rollback Broken Layout and Increase Margin-Left
+- [x] Rollback to checkpoint 4c12c20d (removed broken flex-based container approach)
+- [x] Increase md:ml-8 to md:ml-20 for larger margin at 768-1024px (80px spacing)
+- [x] Restore full text sizes (text-2xl/md:text-3xl/lg:text-4xl) for VS modules
+- [x] Test at 768-1024px to verify VS modules clear the conversion metrics without overlap
+- [x] Verify layout still works at other breakpoints (mobile, 1024px+, 1280px+)
