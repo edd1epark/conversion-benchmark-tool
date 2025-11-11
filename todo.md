@@ -488,3 +488,11 @@
 - [x] Only unwrap metrics at xl (1280px+) where there's sufficient space
 - [x] Increase lg:gap-4 to lg:gap-12 (48px) for better spacing at 1024-1280px
 - [x] Test at 1024px, 1115px, 1200px, 1280px to verify no overlap and proper spacing
+
+## Keep Metrics Inline at 768-1024px and Consistent VS Module Font Sizes
+- [x] Change metric layout from flex-row md:flex-col xl:flex-row to flex-row lg:flex-col xl:flex-row
+- [x] Keep metrics inline at 768-1024px (md) - don't wrap
+- [x] Only wrap metrics at 1024-1280px (lg) where space is tightest
+- [x] Keep metrics inline again at 1280px+ (xl)
+- [x] Change VS module font sizes from text-2xl md:text-3xl lg:text-4xl to text-4xl (consistent large size)
+- [x] Test at 768px, 1024px, 1280px to verify correct wrapping and consistent typography
