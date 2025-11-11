@@ -103,7 +103,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
     <div className="space-y-4 w-full">
       <div className="flex flex-col md:flex-row items-start md:items-start gap-4 md:gap-3 lg:gap-4 xl:gap-6 w-full">
         {/* Thermometer container with proper spacing */}
-        <div className="relative h-96 w-full md:w-80 flex justify-center md:justify-start flex-shrink-0">
+        <div className="relative h-96 w-full md:w-auto flex justify-center md:justify-start">
           <div className="relative h-96 w-80">
             {/* Scale markers on the left */}
             <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-500 w-12 text-right pr-2">
@@ -193,7 +193,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
         </div>
 
         {/* Gap Metrics */}
-        <div className="flex-[4] space-y-3 md:space-y-4 w-full md:min-w-0">
+        <div className="flex-[4] space-y-3 md:space-y-4 w-full min-w-0">
           {/* Always show B2B Average gap */}
           <div className="rounded-lg p-3 md:p-3 lg:p-3 xl:p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
             <h4 className="text-xs font-semibold mb-1" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>

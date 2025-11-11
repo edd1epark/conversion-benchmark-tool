@@ -402,3 +402,11 @@
 - [x] Reduce CardContent padding at md/lg breakpoints (md:px-3 lg:px-4 xl:px-6)
 - [x] Verify VS modules can truly fill available horizontal space
 - [x] Test at 1024px to confirm text no longer breaks
+
+## Debug Why Flex-[4] Not Expanding VS Modules
+- [x] Identified root cause: thermometer container fixed md:w-80 width not shrinking when metrics wrap
+- [x] Changed thermometer container from md:w-80 to md:w-auto to auto-size based on content
+- [x] Removed flex-shrink-0 from thermometer to allow proper flex distribution
+- [x] Kept min-w-0 on VS modules (required for flex to work)
+- [x] VS modules with flex-[4] now expand into freed-up space
+- [x] Test at 1024px to verify VS modules finally display without text breaking
