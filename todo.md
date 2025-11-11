@@ -543,3 +543,7 @@
 - [x] Maintain enough clearance to prevent "2.30%" from covering "Your CVR" label
 - [x] Avoid excessive separation between markers
 - [x] Test with 1.5% CVR to verify optimal spacing
+
+## Further Reduce STACK_SPACING to 55px
+- [x] Reduce STACK_SPACING from 65px to 55px for minimal separation
+- [x] Test with 1.5% CVR to verify no overlap with tighter spacing
