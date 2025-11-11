@@ -38,25 +38,14 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
     return `$${revenue.toFixed(0)}`;
   };
 
-  // Dynamic color scheme
-  const TOP_25_COLOR = '#09928B'; // Teal
-  const HIGHER_COLOR = '#1B86D6'; // Blue
-  const LOWER_COLOR = '#C72660';  // Pink
+  // Fixed color scheme
+  const USER_CVR_COLOR = '#5189FB';     // Blue
+  const AVG_COLOR = '#E46BCF';          // Pink
+  const TOP_25_COLOR = '#6BE2C4';       // Turquoise
   
-  // Determine which is higher: Your CVR or B2B SaaS Avg
-  const userIsHigher = userCVR >= B2B_AVERAGE;
-  const userColor = userIsHigher ? HIGHER_COLOR : LOWER_COLOR;
-  const avgColor = userIsHigher ? LOWER_COLOR : HIGHER_COLOR;
-  
-  // Generate gradient for thermometer fill based on user color
+  // Generate gradient for thermometer fill (Your CVR)
   const getUserGradient = () => {
-    if (userIsHigher) {
-      // Blue gradient
-      return 'linear-gradient(to top, #1B86D6, #4DA3E3, #7FC0F0)';
-    } else {
-      // Pink gradient
-      return 'linear-gradient(to top, #C72660, #D85A8A, #E98DB4)';
-    }
+    return 'linear-gradient(to top, #5189FB, #7AA7FC, #A3C5FD)';
   };
 
   // Get vertical offset for label when markers overlap
@@ -160,7 +149,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
               className="absolute left-14 flex items-center transition-all duration-700"
               style={{ bottom: `${avgPosition}%`, transform: 'translateY(50%)' }}
             >
-              <div className="w-16 h-1" style={{ backgroundColor: avgColor }} />
+              <div className="w-16 h-1" style={{ backgroundColor: AVG_COLOR }} />
               <div 
                 className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
@@ -169,10 +158,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
                   transition: 'transform 0.3s ease'
                 }}
               >
-                <div className="text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md" style={{ backgroundColor: avgColor }}>
+                <div className="text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md" style={{ backgroundColor: AVG_COLOR }}>
                   B2B SaaS Avg
                 </div>
-                <span className="text-lg font-bold" style={{ color: avgColor }}>{B2B_AVERAGE.toFixed(2)}%</span>
+                <span className="text-lg font-bold" style={{ color: AVG_COLOR }}>{B2B_AVERAGE.toFixed(2)}%</span>
               </div>
             </div>
 
@@ -181,7 +170,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
               className="absolute left-14 flex items-center transition-all duration-1000"
               style={{ bottom: `${userPosition}%`, transform: 'translateY(50%)' }}
             >
-              <div className="w-16 h-1" style={{ backgroundColor: userColor }} />
+              <div className="w-16 h-1" style={{ backgroundColor: USER_CVR_COLOR }} />
               <div 
                 className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
@@ -190,10 +179,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
                   transition: 'transform 0.3s ease'
                 }}
               >
-                <div className="text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-lg" style={{ backgroundColor: userColor }}>
+                <div className="text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-lg" style={{ backgroundColor: USER_CVR_COLOR }}>
                   Your CVR
                 </div>
-                <span className="text-lg font-bold" style={{ color: userColor }}>{userCVR.toFixed(2)}%</span>
+                <span className="text-lg font-bold" style={{ color: USER_CVR_COLOR }}>{userCVR.toFixed(2)}%</span>
               </div>
             </div>
           </div>
@@ -203,18 +192,18 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
         <div className="flex-1 space-y-4 w-full lg:w-auto">
           {/* Only show B2B Average gap if user is below average */}
           {userCVR < B2B_AVERAGE && (
-            <div className="rounded-lg p-6" style={{ backgroundColor: avgColor === HIGHER_COLOR ? '#E3F2FD' : '#FCE4EC', border: `2px solid ${avgColor}` }}>
-              <h4 className="text-sm font-semibold mb-2" style={{ color: avgColor }}>VS. B2B SAAS AVG</h4>
-              <p className="text-4xl font-bold mb-1" style={{ color: avgColor }}>
+            <div className="rounded-lg p-6" style={{ backgroundColor: '#FCE4EC', border: `2px solid ${AVG_COLOR}` }}>
+              <h4 className="text-sm font-semibold mb-2" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
+              <p className="text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
                 {gapToAverage.toFixed(2)}%
               </p>
-              <p className="text-sm mb-3" style={{ color: avgColor }}>below average</p>
+              <p className="text-sm mb-3" style={{ color: AVG_COLOR }}>below average</p>
               <div className="flex flex-wrap gap-2">
-                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: avgColor === HIGHER_COLOR ? '#BBDEFB' : '#F8BBD0', color: avgColor }}>
+                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#F8BBD0', color: AVG_COLOR }}>
                   {demosToAverage} demos/month
                 </div>
                 {conversionValue > 0 && (
-                  <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: avgColor === HIGHER_COLOR ? '#BBDEFB' : '#F8BBD0', color: avgColor }}>
+                  <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#F8BBD0', color: AVG_COLOR }}>
                     {formatRevenue(revenueToAverage / 12)}/month
                   </div>
                 )}
@@ -223,7 +212,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
           )}
 
           {/* Always show Top 25% gap */}
-          <div className="rounded-lg p-6" style={{ backgroundColor: '#E0F2F1', border: `2px solid ${TOP_25_COLOR}` }}>
+          <div className="rounded-lg p-6" style={{ backgroundColor: '#E0F7F4', border: `2px solid ${TOP_25_COLOR}` }}>
             <h4 className="text-sm font-semibold mb-2" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
             <p className="text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
               {gapToTop.toFixed(2)}%

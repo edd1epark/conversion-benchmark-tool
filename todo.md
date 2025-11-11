@@ -245,3 +245,13 @@
 - [x] Apply dynamic colors to thermometer chart markers and labels
 - [x] Apply dynamic colors to VS. B2B SAAS AVG card
 - [x] Update VS. TOP 25% card to use teal (#09928B) theme
+
+## Update to Fixed Color Scheme
+- [x] Set Your CVR color to #5189FB (blue)
+- [x] Set B2B SaaS Avg color to #E46BCF (pink)
+- [x] Set Top 25% color to #6BE2C4 (turquoise)
+- [x] Update thermometer chart fill gradient for Your CVR
+- [x] Update all thermometer markers and labels with new colors
+- [x] Update VS. B2B SAAS AVG card to use pink theme
+- [x] Update VS. TOP 25% card to use turquoise theme
+- [x] Remove dynamic color logic (no longer needed)
