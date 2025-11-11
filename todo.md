@@ -622,3 +622,7 @@
 - [x] Update button text to "Download Report"
 - [x] Add print-specific CSS to hide unnecessary elements
 - [x] Test print dialog opens correctly
+
+## Keep Calendly Widget Visible in Print
+- [x] Remove Calendly hiding rules from print.css
+- [x] Ensure Calendly widget appears in printed reports
