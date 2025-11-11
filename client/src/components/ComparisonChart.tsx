@@ -192,7 +192,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
         <div className="flex-1 space-y-4 w-full lg:w-auto">
           {/* Only show B2B Average gap if user is below average */}
           {userCVR < B2B_AVERAGE && (
-            <div className="rounded-lg p-6" style={{ backgroundColor: '#FCE4EC', border: `2px solid ${AVG_COLOR}` }}>
+            <div className="rounded-lg p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
               <h4 className="text-sm font-semibold mb-2" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
               <p className="text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
                 {gapToAverage.toFixed(2)}%
@@ -212,7 +212,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
           )}
 
           {/* Always show Top 25% gap */}
-          <div className="rounded-lg p-6" style={{ backgroundColor: '#E0F7F4', border: `2px solid ${TOP_25_COLOR}` }}>
+          <div className="rounded-lg p-6" style={{ backgroundColor: '#F0FFFC', border: `2px solid ${TOP_25_COLOR}` }}>
             <h4 className="text-sm font-semibold mb-2" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
             <p className="text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
               {gapToTop.toFixed(2)}%

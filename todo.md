@@ -261,3 +261,8 @@
 - [x] Update color constant in ComparisonChart
 - [x] Apply to thermometer chart marker and label
 - [x] Apply to VS. TOP 25% card and pill badges
+
+## Lighten VS. Card Backgrounds for Better Contrast
+- [x] Lighten VS. B2B SAAS AVG card background (from #FCE4EC to #FFF0F5)
+- [x] Lighten VS. TOP 25% card background (from #E0F7F4 to #F0FFFC)
+- [x] Ensure better contrast with text and pill badges
