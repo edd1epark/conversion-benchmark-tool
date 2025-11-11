@@ -101,7 +101,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
 
   return (
     <div className="space-y-4 w-full">
-      <div className="flex flex-col sm:flex-row items-start sm:items-start gap-6 sm:gap-8 md:gap-16 lg:gap-4 xl:gap-6 w-full">
+      <div className="flex flex-col sm:flex-row items-start sm:items-start gap-6 sm:gap-8 md:gap-24 lg:gap-4 xl:gap-6 w-full">
         {/* Thermometer container with proper spacing */}
         <div className="relative h-96 w-full md:w-auto flex justify-center md:justify-start">
           <div className="relative h-96 w-80 md:w-56 lg:w-64 xl:w-80">
@@ -134,7 +134,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: TOP_25_COLOR }} />
               <div 
-                className="flex flex-row sm:flex-col md:flex-row lg:flex-col xl:flex-row items-center sm:items-start md:items-center lg:items-start xl:items-center gap-1 sm:gap-0.5 md:gap-1 lg:gap-0.5 xl:gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-row md:flex-col lg:flex-row xl:flex-row items-center md:items-start lg:items-center xl:items-center gap-1 md:gap-0.5 lg:gap-1 xl:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(TOP_25_PERCENT)}px)`,
@@ -155,7 +155,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: AVG_COLOR }} />
               <div 
-                className="flex flex-row sm:flex-col md:flex-row lg:flex-col xl:flex-row items-center sm:items-start md:items-center lg:items-start xl:items-center gap-1 sm:gap-0.5 md:gap-1 lg:gap-0.5 xl:gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-row md:flex-col lg:flex-row xl:flex-row items-center md:items-start lg:items-center xl:items-center gap-1 md:gap-0.5 lg:gap-1 xl:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(B2B_AVERAGE)}px)`,
@@ -176,7 +176,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: USER_CVR_COLOR }} />
               <div 
-                className="flex flex-row sm:flex-col md:flex-row lg:flex-col xl:flex-row items-center sm:items-start md:items-center lg:items-start xl:items-center gap-1 sm:gap-0.5 md:gap-1 lg:gap-0.5 xl:gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-row md:flex-col lg:flex-row xl:flex-row items-center md:items-start lg:items-center xl:items-center gap-1 md:gap-0.5 lg:gap-1 xl:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(userCVR)}px)`,

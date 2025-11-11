@@ -474,3 +474,10 @@
 - [x] Add w-full to VS modules container for full-width on mobile (<540px)
 - [x] Add sm:w-auto to restore auto-width at 540px+ when side-by-side
 - [x] Test at mobile (<540px), 768px, and 1024px to verify improvements
+
+## Keep Metrics Inline at 540-768px and Increase Gap at 768-1024px
+- [x] Change metric layout from flex-row sm:flex-col md:flex-row to flex-row md:flex-col lg:flex-row xl:flex-row
+- [x] Keep metrics inline at 540-768px (sm) instead of wrapping
+- [x] Only wrap metrics at 768-1024px (md) where space is tightest
+- [x] Increase gap from md:gap-16 to md:gap-24 (96px) to prevent overlap
+- [x] Test at 540px, 768px, 900px, 1024px to verify no overlap between thermometer metrics and VS modules
