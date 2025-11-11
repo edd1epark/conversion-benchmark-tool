@@ -551,3 +551,8 @@
 ## Reduce STACK_SPACING to 50px for Absolute Minimal Separation
 - [x] Reduce STACK_SPACING from 55px to 50px
 - [x] Test with 1.5% CVR to verify no overlap with absolute minimal spacing
+
+## Reduce STACK_SPACING to 35px for Very Tight Positioning
+- [x] Reduce STACK_SPACING from 50px to 35px
+- [x] Test with 1.5% CVR to verify no overlap at very tight spacing
+- [x] Verify this is the minimum viable spacing that prevents overlap

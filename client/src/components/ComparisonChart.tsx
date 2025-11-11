@@ -66,7 +66,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
     const OVERLAP_THRESHOLD = 15; // 15% of scale - balanced detection for actual overlaps
     // Increase spacing at lg breakpoint (1024-1280px) where metrics wrap vertically
     const isLgBreakpoint = windowWidth >= 1024 && windowWidth < 1280;
-    const STACK_SPACING = isLgBreakpoint ? 50 : 18; // 50px for wrapped metrics (absolute minimal clearance), 18px for inline
+    const STACK_SPACING = isLgBreakpoint ? 35 : 18; // 35px for wrapped metrics (very tight positioning), 18px for inline
     
     // Check which markers are close to this one
     let offset = 0;
