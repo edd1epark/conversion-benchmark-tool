@@ -17,14 +17,14 @@ export async function generateConversionReportPDF(data: PDFData) {
     
     if (!resultsContainer) {
       console.error('Results container not found');
-      throw new Error('Could not find results to capture');
+      throw new Error('Could not find results page to capture');
     }
 
     // Wait a bit to ensure everything is rendered
     await wait(300);
 
     // Scroll to top to ensure everything is in view
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
     await wait(200);
 
     // Capture the screenshot at 1440px width
@@ -38,21 +38,30 @@ export async function generateConversionReportPDF(data: PDFData) {
       windowWidth: 1440,
     });
 
-    // Convert to blob and download
-    canvas.toBlob((blob) => {
-      if (blob) {
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'conversion-rate-report.png';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-      }
-    }, 'image/png');
+    // Convert to blob and download - wrap in promise to properly await
+    await new Promise<void>((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (blob) {
+          try {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'conversion-rate-report.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            resolve();
+          } catch (error) {
+            reject(error);
+          }
+        } else {
+          reject(new Error('Failed to create image blob'));
+        }
+      }, 'image/png');
+    });
 
-    console.log('Screenshot generated successfully');
+    console.log('Screenshot generated and downloaded successfully');
   } catch (error) {
     console.error('Error generating screenshot:', error);
     throw error;

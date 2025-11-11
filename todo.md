@@ -596,3 +596,9 @@
 - [x] Capture entire results page (excluding Calendly section)
 - [x] Download as PNG image with all visual elements
 - [x] Test screenshot download functionality
+
+## Fix Screenshot Download Error
+- [x] Investigate "failed to generate PDF" error message
+- [x] Debug screenshot capture function
+- [x] Fix error handling and element selection
+- [x] Test download works correctly

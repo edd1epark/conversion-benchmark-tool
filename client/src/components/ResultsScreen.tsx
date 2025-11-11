@@ -185,7 +185,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
         <Button
           size="lg"
           onClick={async () => {
-            const toastId = toast.loading('Generating PDF with charts...');
+            const toastId = toast.loading('Generating screenshot...');
             try {
               await generateConversionReportPDF({
                 monthlyTraffic: data.monthlyTraffic,
@@ -193,10 +193,10 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
                 conversionType: data.conversionType,
                 conversionValue: cvValue,
               });
-              toast.success('PDF downloaded successfully!', { id: toastId });
+              toast.success('Screenshot downloaded successfully!', { id: toastId });
             } catch (error) {
               console.error('PDF generation error:', error);
-              toast.error('Failed to generate PDF', { id: toastId });
+              toast.error('Failed to generate screenshot', { id: toastId });
             }
           }}
           className="gap-2 text-lg font-semibold"
