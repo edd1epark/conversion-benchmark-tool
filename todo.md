@@ -347,3 +347,11 @@
 - [x] Prevent thermometer marker labels from overlapping with VS modules
 - [x] Make VS modules flexible and responsive with min-width and scaled padding/fonts
 - [x] Test at 768px, 1024px, and 1366px breakpoints
+
+## Fix Text Wrapping and 1024px Layout
+- [x] Ensure 1024px breakpoint uses 2-column grid layout (lg:grid-cols-2 at 1024px)
+- [x] Revert /mo back to /month in pill badges
+- [x] Prevent awkward text wrapping in pills with whitespace-nowrap
+- [x] Prevent text wrapping in "X% below/above average" text
+- [x] Adjust font sizes more carefully (text-xl/md:text-2xl/lg:text-4xl)
+- [x] Verified 2-column layout configuration at 1024px breakpoint
