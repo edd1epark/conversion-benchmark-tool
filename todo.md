@@ -313,3 +313,10 @@
 - [x] Update ProjectionGraph to always display B2B SaaS Average benchmark line
 - [x] Show B2B SaaS Average line even when user CVR is above the average
 - [x] Update benchmark line color to always use pink (#E46BCF) for B2B SaaS Average
+
+## Update Logo and Layout Per Reference Image
+- [x] Update logo to match Grox branding (slimmer wordmark)
+- [x] Make logo clickable linking to https://www.groxweb.com/
+- [x] Reduce gap between logo and headline
+- [x] Tighten text wrapping on headline and subheadline
+- [x] Improve overall visual hierarchy

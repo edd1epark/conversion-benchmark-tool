@@ -1,0 +1,37 @@
+<svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- X logo icon -->
+  <g transform="translate(0, 4)">
+    <path d="M24.3746 19.2306L10.1565 0H1.04024L15.4819 19.2838L0 40H8.75288L24.3746 19.2306Z" fill="url(#paint0_radial)"/>
+    <path d="M37.9021 1.00543L27.8003 14.5614L24.3326 9.61051L30.5847 1.00543H37.9021Z" fill="#222222" stroke="#222222" stroke-width="1.01003"/>
+    <path d="M38.9983 39.9946H30.9525L23.9651 30.1513L27.8655 25.0427L38.9983 39.9946Z" fill="#222222" stroke="#222222" stroke-width="1.01003"/>
+  </g>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientTransform="matrix(11.6621 38.5252 -45.0309 12.0087 1.61512 1.78215e-06)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4B4DD"/>
+      <stop offset="0.17" stop-color="#F0B3DD"/>
+      <stop offset="0.33" stop-color="#E4B1DD"/>
+      <stop offset="0.5" stop-color="#CFAEDF"/>
+      <stop offset="0.66" stop-color="#B3A9E0"/>
+      <stop offset="0.83" stop-color="#8FA3E3"/>
+      <stop offset="0.99" stop-color="#639CE5"/>
+      <stop offset="1" stop-color="#619CE6"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Gro text -->
+  <text x="50" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#222222">Gro</text>
+  
+  <!-- Dot -->
+  <circle cx="112" cy="28" r="3.5" fill="#222222"/>
+  
+  <!-- X text with gradient -->
+  <text x="120" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="url(#textGradient)">X</text>
+  
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4B4DD"/>
+      <stop offset="50%" stop-color="#B3A9E0"/>
+      <stop offset="100%" stop-color="#619CE6"/>
+    </linearGradient>
+  </defs>
+</svg>
