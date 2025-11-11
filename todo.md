@@ -537,3 +537,9 @@
 - [x] Identify root cause: B2B Average offset logic was backwards (checked < instead of >)
 - [x] Fix: Change B2B Average to move up when higher than user CVR
 - [x] Test with 1.5% CVR scenario to verify fix works
+
+## Reduce STACK_SPACING for Better Visual Balance
+- [x] Reduce STACK_SPACING from 85px to 65px at lg breakpoint
+- [x] Maintain enough clearance to prevent "2.30%" from covering "Your CVR" label
+- [x] Avoid excessive separation between markers
+- [x] Test with 1.5% CVR to verify optimal spacing
