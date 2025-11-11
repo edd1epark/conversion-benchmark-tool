@@ -103,7 +103,8 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
     <div className="space-y-4 w-full">
       <div className="flex flex-col md:flex-row items-start md:items-start gap-6 md:gap-10 lg:gap-4 xl:gap-6 w-full">
         {/* Thermometer container with proper spacing */}
-        <div className="relative h-96 flex justify-center md:justify-start">
+        <div className="relative h-96 w-full md:w-auto flex justify-center md:justify-start">
+          <div className="relative h-96 w-80 md:w-56 lg:w-64 xl:w-80">
             {/* Scale markers on the left */}
             <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-500 w-12 text-right pr-2">
               <span>{maxValue.toFixed(1)}%</span>
@@ -188,14 +189,15 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
                 <span className="text-base md:text-lg font-bold" style={{ color: USER_CVR_COLOR }}>{userCVR.toFixed(2)}%</span>
               </div>
             </div>
+          </div>
         </div>
 
         {/* Gap Metrics */}
-        <div className="w-auto space-y-3 md:space-y-4">
+        <div className="w-auto space-y-3 md:space-y-4 md:ml-8 lg:ml-0">
           {/* Always show B2B Average gap */}
           <div className="rounded-lg p-3 md:p-3 lg:p-3 xl:p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
             <h4 className="text-xs font-semibold mb-1" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
+            <p className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
               {userCVR >= B2B_AVERAGE ? '+' : ''}{gapToAverage.toFixed(2)}%
             </p>
             <p className="text-xs mb-1 whitespace-nowrap" style={{ color: AVG_COLOR }}>
@@ -218,7 +220,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
           {/* Always show Top 25% gap */}
           <div className="rounded-lg p-3 md:p-3 lg:p-3 xl:p-6" style={{ backgroundColor: '#F0FFFC', border: `2px solid ${TOP_25_COLOR}` }}>
             <h4 className="text-xs font-semibold mb-1" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
+            <p className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
               {userCVR >= TOP_25_PERCENT ? '+' : ''}{gapToTop.toFixed(2)}%
             </p>
             <p className="text-xs mb-1 whitespace-nowrap" style={{ color: TOP_25_COLOR }}>
