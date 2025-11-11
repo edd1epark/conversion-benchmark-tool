@@ -460,3 +460,11 @@
 - [x] Restore full text sizes (text-2xl/md:text-3xl/lg:text-4xl) for VS modules
 - [x] Test at 768-1024px to verify VS modules clear the conversion metrics without overlap
 - [x] Verify layout still works at other breakpoints (mobile, 1024px+, 1280px+)
+
+## Optimize 540-768px Layout (sm to md breakpoint)
+- [x] Change main container flex direction to sm:flex-row (horizontal at 540px+)
+- [x] Keep VS modules next to thermometer at 540-768px range
+- [x] Wrap conversion metrics below marker labels (flex-col) at sm breakpoint
+- [x] Metrics go back inline (flex-row) at md breakpoint
+- [x] Remove md:ml-20 margin since metrics now wrap, preventing overlap
+- [x] Test at 540px, 650px, 768px to verify proper layout
