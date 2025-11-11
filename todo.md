@@ -340,3 +340,10 @@
 - [x] Reduce font sizes in VS modules for better fit at medium breakpoints
 - [x] Wrap text in VS modules as needed to prevent overflow
 - [x] Test all breakpoints for proper layout and readability
+
+## Fix Responsive Layout Issues
+- [x] Keep VS modules next to thermometer on tablet and desktop (should not wrap to bottom)
+- [x] Ensure 1024px breakpoint uses 2-column grid (Comparison + Calendly side by side)
+- [x] Prevent thermometer marker labels from overlapping with VS modules
+- [x] Make VS modules flexible and responsive with min-width and scaled padding/fonts
+- [x] Test at 768px, 1024px, and 1366px breakpoints
