@@ -304,3 +304,7 @@
 ## Fix Thermometer Fill Bar Overflow
 - [x] Add overflow-hidden to thermometer track container to clip fill bar properly
 - [x] Ensure fill bar conforms to rounded bottom shape without overflowing
+
+## Fix Thermometer Fill Bar Top Rounding
+- [x] Change fill bar from rounded-full to rounded-b-full to only round bottom corners
+- [x] Ensure top of fill bar has square edges while bottom remains rounded
