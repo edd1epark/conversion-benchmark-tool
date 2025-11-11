@@ -277,3 +277,7 @@
 - [x] Change VS. B2B SAAS AVG demos/month pill background from #F8BBD0 to #B656A6 (purple)
 - [x] Change VS. TOP 25% demos/month pill background from #B2EBF2 to #05AB80 (teal/green)
 - [x] Keep revenue pills with existing background colors
+
+## Revert Pill Badge Background Colors
+- [x] Revert VS. B2B SAAS AVG demos/month pill background from #B656A6 back to #F8BBD0
+- [x] Revert VS. TOP 25% demos/month pill background from #05AB80 back to #B2EBF2
