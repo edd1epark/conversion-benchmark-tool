@@ -101,10 +101,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
 
   return (
     <div className="space-y-4 w-full">
-      <div className="flex flex-col md:flex-row items-start md:items-start gap-4 md:gap-6 w-full">
+      <div className="flex flex-col md:flex-row items-start md:items-start gap-4 md:gap-3 lg:gap-4 xl:gap-6 w-full">
         {/* Thermometer container with proper spacing */}
         <div className="relative h-96 w-full md:w-auto flex justify-center md:justify-start flex-shrink-0">
-          <div className="relative h-96 w-72 md:w-64 lg:w-72 xl:w-80">
+          <div className="relative h-96 w-80">
             {/* Scale markers on the left */}
             <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-500 w-12 text-right pr-2">
               <span>{maxValue.toFixed(1)}%</span>
@@ -195,22 +195,22 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
         {/* Gap Metrics */}
         <div className="flex-1 space-y-3 md:space-y-4 w-full md:min-w-0">
           {/* Always show B2B Average gap */}
-          <div className="rounded-lg p-3 md:p-4 lg:p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
-            <h4 className="text-xs md:text-sm font-semibold mb-1 md:mb-2" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
-            <p className="text-xl md:text-xl lg:text-3xl xl:text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
+          <div className="rounded-lg p-3 md:p-3 lg:p-3 xl:p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
+            <h4 className="text-xs font-semibold mb-1" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
+            <p className="text-xl md:text-lg lg:text-xl xl:text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
               {userCVR >= B2B_AVERAGE ? '+' : ''}{gapToAverage.toFixed(2)}%
             </p>
-            <p className="text-xs md:text-sm mb-1 md:mb-2 whitespace-nowrap" style={{ color: AVG_COLOR }}>
+            <p className="text-xs mb-1 whitespace-nowrap" style={{ color: AVG_COLOR }}>
               {Math.abs(ratioToAverage).toFixed(0)}% {userCVR >= B2B_AVERAGE ? 'above' : 'below'} average
             </p>
               <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {demosToAverage > 0 && (
-                  <div className="px-2.5 md:px-3 lg:px-4 py-1 md:py-1.5 lg:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
+                  <div className="px-2.5 md:px-2.5 lg:px-2.5 xl:px-4 py-1 md:py-1 lg:py-1 xl:py-2 rounded-full text-xs font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
                     {demosToAverage} {conversionType}/month
                   </div>
                 )}
                 {conversionValue > 0 && demosToAverage > 0 && (
-                  <div className="px-2.5 md:px-3 lg:px-4 py-1 md:py-1.5 lg:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
+                  <div className="px-2.5 md:px-2.5 lg:px-2.5 xl:px-4 py-1 md:py-1 lg:py-1 xl:py-2 rounded-full text-xs font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
                     {formatRevenue(revenueToAverage / 12)}/month
                   </div>
                 )}
@@ -218,22 +218,22 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
           </div>
 
           {/* Always show Top 25% gap */}
-          <div className="rounded-lg p-3 md:p-4 lg:p-6" style={{ backgroundColor: '#F0FFFC', border: `2px solid ${TOP_25_COLOR}` }}>
-            <h4 className="text-xs md:text-sm font-semibold mb-1 md:mb-2" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
-            <p className="text-xl md:text-xl lg:text-3xl xl:text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
+          <div className="rounded-lg p-3 md:p-3 lg:p-3 xl:p-6" style={{ backgroundColor: '#F0FFFC', border: `2px solid ${TOP_25_COLOR}` }}>
+            <h4 className="text-xs font-semibold mb-1" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
+            <p className="text-xl md:text-lg lg:text-xl xl:text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
               {userCVR >= TOP_25_PERCENT ? '+' : ''}{gapToTop.toFixed(2)}%
             </p>
-            <p className="text-xs md:text-sm mb-1 md:mb-2 whitespace-nowrap" style={{ color: TOP_25_COLOR }}>
+            <p className="text-xs mb-1 whitespace-nowrap" style={{ color: TOP_25_COLOR }}>
               {Math.abs(ratioToTop).toFixed(0)}% {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
             <div className="flex flex-wrap gap-1.5 md:gap-2">
               {demosToTop > 0 && (
-                <div className="px-2.5 md:px-3 lg:px-4 py-1 md:py-1.5 lg:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
+                <div className="px-2.5 md:px-2.5 lg:px-2.5 xl:px-4 py-1 md:py-1 lg:py-1 xl:py-2 rounded-full text-xs font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
                   {Math.abs(demosToTop)} {conversionType}/month
                 </div>
               )}
               {conversionValue > 0 && demosToTop > 0 && (
-                <div className="px-2.5 md:px-3 lg:px-4 py-1 md:py-1.5 lg:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
+                <div className="px-2.5 md:px-2.5 lg:px-2.5 xl:px-4 py-1 md:py-1 lg:py-1 xl:py-2 rounded-full text-xs font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
                   {formatRevenue(revenueToTop / 12)}/month
                 </div>
               )}
