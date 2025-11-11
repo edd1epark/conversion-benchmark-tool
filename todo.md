@@ -602,3 +602,23 @@
 - [x] Debug screenshot capture function
 - [x] Fix error handling and element selection
 - [x] Test download works correctly
+
+## Debug Screenshot Generation Failure in User Browser
+- [x] Investigate why screenshot is failing for user
+- [x] Check if results-container class exists
+- [x] Fix element selection or add fallback - now captures entire document body
+- [ ] Test screenshot generation works correctly
+
+## Replace html2canvas with Microlink.io Screenshot API
+- [x] Remove html2canvas dependency
+- [x] Implement Microlink.io screenshot API call
+- [x] Update download button to use Microlink API
+- [x] Handle loading state during API call
+- [ ] Test screenshot download works without browser blocking
+- [ ] Move Microlink API call to server-side to avoid browser blocking
+
+## Replace Screenshot with Native Print Functionality
+- [x] Replace Microlink API with native window.print()
+- [x] Update button text to "Download Report"
+- [x] Add print-specific CSS to hide unnecessary elements
+- [x] Test print dialog opens correctly

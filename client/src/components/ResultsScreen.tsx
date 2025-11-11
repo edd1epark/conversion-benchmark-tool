@@ -180,29 +180,22 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
         </CardContent>
       </Card>
 
-      {/* Download PDF Button */}
+      {/* Download Report Button */}
       <div className="flex justify-center">
         <Button
           size="lg"
-          onClick={async () => {
-            const toastId = toast.loading('Generating screenshot...');
-            try {
-              await generateConversionReportPDF({
-                monthlyTraffic: data.monthlyTraffic,
-                monthlyConversions: data.monthlyConversions,
-                conversionType: data.conversionType,
-                conversionValue: cvValue,
-              });
-              toast.success('Screenshot downloaded successfully!', { id: toastId });
-            } catch (error) {
-              console.error('PDF generation error:', error);
-              toast.error('Failed to generate screenshot', { id: toastId });
-            }
+          onClick={() => {
+            generateConversionReportPDF({
+              monthlyTraffic: data.monthlyTraffic,
+              monthlyConversions: data.monthlyConversions,
+              conversionType: data.conversionType,
+              conversionValue: cvValue,
+            });
           }}
           className="gap-2 text-lg font-semibold"
         >
           <Download className="h-5 w-5" />
-          Download Report as Image
+          Download Report
         </Button>
       </div>
 

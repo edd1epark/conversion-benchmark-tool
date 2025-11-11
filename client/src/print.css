@@ -1,0 +1,44 @@
+/* Print-specific styles */
+@media print {
+  /* Hide navigation and interactive elements */
+  button,
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Hide Calendly widget in print */
+  .calendly-inline-widget,
+  iframe[src*="calendly"] {
+    display: none !important;
+  }
+  
+  /* Ensure charts and graphs print well */
+  .recharts-wrapper,
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Page breaks */
+  .page-break {
+    page-break-after: always;
+  }
+  
+  /* Ensure proper sizing */
+  body {
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Prevent content from being cut off */
+  * {
+    overflow: visible !important;
+  }
+  
+  /* Ensure backgrounds print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
