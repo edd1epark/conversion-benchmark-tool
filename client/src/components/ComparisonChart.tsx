@@ -193,11 +193,11 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
         </div>
 
         {/* Gap Metrics */}
-        <div className="w-auto space-y-3 md:space-y-4">
+        <div className="w-auto space-y-3 md:space-y-4 md:ml-8 lg:ml-0">
           {/* Always show B2B Average gap */}
           <div className="rounded-lg p-3 md:p-3 lg:p-3 xl:p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
             <h4 className="text-xs font-semibold mb-1" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
+            <p className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
               {userCVR >= B2B_AVERAGE ? '+' : ''}{gapToAverage.toFixed(2)}%
             </p>
             <p className="text-xs mb-1 whitespace-nowrap" style={{ color: AVG_COLOR }}>
@@ -220,7 +220,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
           {/* Always show Top 25% gap */}
           <div className="rounded-lg p-3 md:p-3 lg:p-3 xl:p-6" style={{ backgroundColor: '#F0FFFC', border: `2px solid ${TOP_25_COLOR}` }}>
             <h4 className="text-xs font-semibold mb-1" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
+            <p className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
               {userCVR >= TOP_25_PERCENT ? '+' : ''}{gapToTop.toFixed(2)}%
             </p>
             <p className="text-xs mb-1 whitespace-nowrap" style={{ color: TOP_25_COLOR }}>

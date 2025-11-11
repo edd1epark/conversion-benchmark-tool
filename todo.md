@@ -447,3 +447,9 @@
 - [x] Increased gap at md breakpoint from gap-6 to md:gap-10 for 768-1024px range
 - [x] Gap progression: gap-6 (base), md:gap-10 (768-1024px), lg:gap-4, xl:gap-6
 - [x] Test at 768-1024px to verify no overlap and VS modules at reasonable width
+
+## Fix Persistent Overlap with Explicit Margin-Left
+- [x] Add explicit margin-left to VS modules container at md breakpoint
+- [x] Push VS modules further right to prevent overlap with thermometer markers
+- [x] Restore large text sizes (text-2xl/text-3xl/text-4xl) for VS modules at sub-1024px
+- [x] Test at 768-1024px to verify no overlap and proper text sizing
