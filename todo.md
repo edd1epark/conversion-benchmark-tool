@@ -569,3 +569,10 @@
 ## Reduce Form Top Padding to Minimal pt-1
 - [x] Change CardContent padding from pt-4 to pt-1 for minimal white space
 - [x] Verify form looks balanced with minimal top spacing
+
+## PDF Download Feature
+- [x] Install jsPDF library for PDF generation
+- [x] Create PDF generation utility function
+- [x] Add "Download Report as PDF" button to ResultsScreen
+- [x] Generate PDF with results (excluding Calendly section)
+- [x] Test PDF download functionality

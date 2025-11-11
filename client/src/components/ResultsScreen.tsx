@@ -6,7 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ComparisonChart from "@/components/ComparisonChart";
 import ProjectionGraph from "@/components/ProjectionGraph";
 import CalendlyWidget from "@/components/CalendlyWidget";
-import { ArrowLeft, Info } from "lucide-react";
+import { ArrowLeft, Info, Download } from "lucide-react";
+import { generateConversionReportPDF } from "@/lib/generatePDF";
 
 interface ResultsScreenProps {
   data: {
@@ -177,6 +178,23 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
           />
         </CardContent>
       </Card>
+
+      {/* Download PDF Button */}
+      <div className="flex justify-center">
+        <Button
+          size="lg"
+          onClick={() => generateConversionReportPDF({
+            monthlyTraffic: data.monthlyTraffic,
+            monthlyConversions: data.monthlyConversions,
+            conversionType: data.conversionType,
+            conversionValue: cvValue,
+          })}
+          className="gap-2 text-lg font-semibold"
+        >
+          <Download className="h-5 w-5" />
+          Download Report as PDF
+        </Button>
+      </div>
 
       {/* Calendly Widget - Below projection on tablet/mobile (lg breakpoint and below) */}
       <div className="lg:hidden">
