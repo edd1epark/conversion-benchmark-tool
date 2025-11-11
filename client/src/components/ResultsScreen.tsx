@@ -183,7 +183,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
       <div className="flex justify-center">
         <Button
           size="lg"
-          onClick={() => generateConversionReportPDF({
+          onClick={async () => await generateConversionReportPDF({
             monthlyTraffic: data.monthlyTraffic,
             monthlyConversions: data.monthlyConversions,
             conversionType: data.conversionType,

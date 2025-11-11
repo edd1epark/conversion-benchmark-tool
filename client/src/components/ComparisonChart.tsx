@@ -110,9 +110,8 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
     
     return offset;
   };
-
   return (
-    <div className="space-y-4 w-full">
+    <div className="space-y-6" data-chart="thermometer">
       <div className="flex flex-col sm:flex-row items-start sm:items-start gap-6 sm:gap-8 md:gap-24 lg:gap-12 xl:gap-6 w-full">
         {/* Thermometer container with proper spacing */}
         <div className="relative h-96 w-full md:w-auto flex justify-center md:justify-start">

@@ -75,7 +75,7 @@ export default function ProjectionGraph({
   };
 
   return (
-    <div className="w-full h-[400px]">
+    <div className="w-full h-[400px]" data-chart="projection">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}
