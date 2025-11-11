@@ -46,16 +46,9 @@ export default function ProjectionGraph({
         improved: conversionValue > 0 ? improvedConversions * conversionValue : improvedConversions,
       };
 
-      // Add conditional benchmark line
-      if (currentCVR < B2B_AVERAGE) {
-        // Show B2B average line
-        const benchmarkConversions = (B2B_AVERAGE / 100) * monthlyTraffic * month;
-        dataPoint.benchmark = conversionValue > 0 ? benchmarkConversions * conversionValue : benchmarkConversions;
-      } else if (currentCVR < TOP_25_PERCENT) {
-        // Show top 25% line
-        const benchmarkConversions = (TOP_25_PERCENT / 100) * monthlyTraffic * month;
-        dataPoint.benchmark = conversionValue > 0 ? benchmarkConversions * conversionValue : benchmarkConversions;
-      }
+      // Always show B2B SaaS Average benchmark line
+      const benchmarkConversions = (B2B_AVERAGE / 100) * monthlyTraffic * month;
+      dataPoint.benchmark = conversionValue > 0 ? benchmarkConversions * conversionValue : benchmarkConversions;
 
       result.push(dataPoint);
     }
@@ -78,12 +71,7 @@ export default function ProjectionGraph({
   };
 
   const getBenchmarkLabel = () => {
-    if (currentCVR < B2B_AVERAGE) {
-      return "B2B SaaS Average (2.3%)";
-    } else if (currentCVR < TOP_25_PERCENT) {
-      return "Top 25% (5.3%)";
-    }
-    return "";
+    return "B2B SaaS Average (2.3%)";
   };
 
   return (
@@ -142,7 +130,7 @@ export default function ProjectionGraph({
             <Line
               type="monotone"
               dataKey="benchmark"
-              stroke={currentCVR < B2B_AVERAGE ? "#E46BCF" : "#06D6A0"}
+              stroke="#E46BCF"
               strokeWidth={2}
               strokeDasharray="5 5"
               name={getBenchmarkLabel()}

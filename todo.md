@@ -308,3 +308,8 @@
 ## Fix Thermometer Fill Bar Top Rounding
 - [x] Change fill bar from rounded-full to rounded-b-full to only round bottom corners
 - [x] Ensure top of fill bar has square edges while bottom remains rounded
+
+## Show B2B SaaS Average Line Always in Projection Graph
+- [x] Update ProjectionGraph to always display B2B SaaS Average benchmark line
+- [x] Show B2B SaaS Average line even when user CVR is above the average
+- [x] Update benchmark line color to always use pink (#E46BCF) for B2B SaaS Average
