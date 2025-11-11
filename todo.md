@@ -410,3 +410,10 @@
 - [x] Kept min-w-0 on VS modules (required for flex to work)
 - [x] VS modules with flex-[4] now expand into freed-up space
 - [x] Test at 1024px to verify VS modules finally display without text breaking
+
+## Fix Inner Thermometer Div Responsive Width
+- [x] Identified: Inner thermometer div has fixed w-80 (320px) at all breakpoints
+- [x] Make inner thermometer responsive: w-56 at md, w-64 at lg, w-80 at xl
+- [x] Keep w-80 at xl+ when metrics are inline and need more horizontal space
+- [x] This frees up 64-96px of space for VS modules at constrained breakpoints
+- [x] Test at 1024px to verify VS modules finally expand without text breaking
