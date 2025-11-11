@@ -255,3 +255,9 @@
 - [x] Update VS. B2B SAAS AVG card to use pink theme
 - [x] Update VS. TOP 25% card to use turquoise theme
 - [x] Remove dynamic color logic (no longer needed)
+
+## Update Top 25% Color
+- [x] Change Top 25% color from #6BE2C4 to #06D6A0
+- [x] Update color constant in ComparisonChart
+- [x] Apply to thermometer chart marker and label
+- [x] Apply to VS. TOP 25% card and pill badges

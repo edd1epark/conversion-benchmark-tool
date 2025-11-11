@@ -41,7 +41,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
   // Fixed color scheme
   const USER_CVR_COLOR = '#5189FB';     // Blue
   const AVG_COLOR = '#E46BCF';          // Pink
-  const TOP_25_COLOR = '#6BE2C4';       // Turquoise
+  const TOP_25_COLOR = '#06D6A0';       // Turquoise
   
   // Generate gradient for thermometer fill (Your CVR)
   const getUserGradient = () => {
