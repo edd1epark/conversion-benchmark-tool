@@ -355,3 +355,11 @@
 - [x] Prevent text wrapping in "X% below/above average" text
 - [x] Adjust font sizes more carefully (text-xl/md:text-2xl/lg:text-4xl)
 - [x] Verified 2-column layout configuration at 1024px breakpoint
+
+## Fix Thermometer Marker Layout and VS Module Sizing
+- [x] Mobile (< 768px): Keep conversion metrics NEXT TO markers (flex-row) since VS modules wrap below
+- [x] Tablet (768-1024px): Wrap metrics BELOW markers (flex-col) to give VS modules more horizontal space
+- [x] Desktop (1024px+): Keep metrics next to markers with optimized spacing
+- [x] Prevent marker overlap when wrapped with proper gap spacing (gap-0.5 on md)
+- [x] Optimize VS module text sizing to prevent breaking (text-xl/md:text-xl/lg:text-3xl/xl:text-4xl)
+- [x] Test at 375px (mobile), 768px (tablet), 1024px (desktop) breakpoints
