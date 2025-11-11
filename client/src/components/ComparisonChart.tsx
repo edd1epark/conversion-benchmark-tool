@@ -134,7 +134,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: TOP_25_COLOR }} />
               <div 
-                className="flex flex-row md:flex-col lg:flex-row items-center md:items-start lg:items-center gap-1 md:gap-0.5 lg:gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-row md:flex-col xl:flex-row items-center md:items-start xl:items-center gap-1 md:gap-0.5 xl:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(TOP_25_PERCENT)}px)`,
@@ -155,7 +155,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: AVG_COLOR }} />
               <div 
-                className="flex flex-row md:flex-col lg:flex-row items-center md:items-start lg:items-center gap-1 md:gap-0.5 lg:gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-row md:flex-col xl:flex-row items-center md:items-start xl:items-center gap-1 md:gap-0.5 xl:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(B2B_AVERAGE)}px)`,
@@ -176,7 +176,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: USER_CVR_COLOR }} />
               <div 
-                className="flex flex-row md:flex-col lg:flex-row items-center md:items-start lg:items-center gap-1 md:gap-0.5 lg:gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-row md:flex-col xl:flex-row items-center md:items-start xl:items-center gap-1 md:gap-0.5 xl:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(userCVR)}px)`,

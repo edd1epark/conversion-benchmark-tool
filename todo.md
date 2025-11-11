@@ -363,3 +363,10 @@
 - [x] Prevent marker overlap when wrapped with proper gap spacing (gap-0.5 on md)
 - [x] Optimize VS module text sizing to prevent breaking (text-xl/md:text-xl/lg:text-3xl/xl:text-4xl)
 - [x] Test at 375px (mobile), 768px (tablet), 1024px (desktop) breakpoints
+
+## Fix 1024px VS Module Text Breaking
+- [x] Change marker layout from lg:flex-row to xl:flex-row (keep wrapped until 1280px)
+- [x] Keep metrics below markers at 1024px to give VS modules horizontal space
+- [x] Metrics should only go inline at 1280px+ when there's enough room
+- [x] Verify VS module text no longer breaks at 1024px breakpoint
+- [x] Test at 1024px and 1280px to confirm proper layout
