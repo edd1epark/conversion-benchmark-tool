@@ -565,3 +565,7 @@
 ## Further Reduce Form Top Padding for Noticeable Change
 - [x] Reduce padding from pt-6 to pt-4 (16px) for more visible gap reduction
 - [x] Test to verify the change is noticeable compared to original
+
+## Reduce Form Top Padding to Minimal pt-1
+- [x] Change CardContent padding from pt-4 to pt-1 for minimal white space
+- [x] Verify form looks balanced with minimal top spacing
