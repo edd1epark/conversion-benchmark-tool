@@ -626,3 +626,7 @@
 ## Keep Calendly Widget Visible in Print
 - [x] Remove Calendly hiding rules from print.css
 - [x] Ensure Calendly widget appears in printed reports
+
+## Hide Calendly Widget in Print to Prevent Empty Space
+- [x] Restore Calendly hiding rule in print.css
+- [x] Verify no empty pages appear in print preview

@@ -6,6 +6,11 @@
     display: none !important;
   }
   
+  /* Hide Calendly widget in print - iframes don't render properly */
+  .calendly-inline-widget,
+  iframe[src*="calendly"] {
+    display: none !important;
+  }
   
   /* Ensure charts and graphs print well */
   .recharts-wrapper,
