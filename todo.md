@@ -424,3 +424,11 @@
 - [x] Gap progression now: gap-4 (base), md:gap-6 (768px), lg:gap-4 (1024px), xl:gap-6 (1280px+)
 - [x] Test at 768px to verify no overlap and proper visual balance
 - [x] Verify 1024px still works correctly after changes
+
+## Optimize Single-Column Layout (Below 1024px)
+- [x] Keep conversion metrics INLINE with markers (flex-row) in single-column layout
+- [x] Only wrap metrics below markers (flex-col) at md when in constrained 2-column layout
+- [x] Change marker layout: flex-row (base), md:flex-col (768-1023px only), lg:flex-row (1024px+)
+- [x] Add max-w-2xl to VS modules in single-column, lg:max-w-none for 2-column
+- [x] Gap already optimized: gap-4 (base), md:gap-6 (768-1023px), lg:gap-4, xl:gap-6
+- [x] Test at mobile and tablet to verify VS modules no longer look stretched
