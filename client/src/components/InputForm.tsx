@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { trpc } from "@/lib/trpc";
-import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -26,16 +24,6 @@ export default function InputForm({ onSubmit }: InputFormProps) {
   const [monthlyTraffic, setMonthlyTraffic] = useState("");
   const [monthlyConversions, setMonthlyConversions] = useState("");
   const [conversionType, setConversionType] = useState<"demos" | "signups">("demos");
-  
-  const saveResponse = trpc.responses.save.useMutation({
-    onSuccess: () => {
-      console.log("Response saved to database");
-    },
-    onError: (error) => {
-      console.error("Failed to save response:", error);
-      toast.error("Failed to save your response");
-    },
-  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,18 +32,12 @@ export default function InputForm({ onSubmit }: InputFormProps) {
     const conversions = parseInt(monthlyConversions) || 0;
     
     if (traffic > 0 && conversions > 0) {
-      const data = {
+      onSubmit({
         monthlyTraffic: traffic,
         monthlyConversions: conversions,
         conversionType,
         conversionValue: 0,
-      };
-      
-      // Save to database
-      saveResponse.mutate(data);
-      
-      // Show results
-      onSubmit(data);
+      });
     }
   };
 

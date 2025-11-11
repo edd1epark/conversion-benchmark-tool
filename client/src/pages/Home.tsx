@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { APP_LOGO, APP_TITLE, getLoginUrl } from "@/const";
+import { APP_LOGO, APP_TITLE } from "@/const";
 import InputForm from "@/components/InputForm";
 import ResultsScreen from "@/components/ResultsScreen";
 
