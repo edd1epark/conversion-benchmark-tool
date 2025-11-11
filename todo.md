@@ -272,3 +272,8 @@
 - [x] Change revenue pill badge text to white in VS. B2B SAAS AVG card
 - [x] Change demos/month pill badge text to white in VS. TOP 25% card
 - [x] Change revenue pill badge text to white in VS. TOP 25% card
+
+## Update Pill Badge Background Colors
+- [x] Change VS. B2B SAAS AVG demos/month pill background from #F8BBD0 to #B656A6 (purple)
+- [x] Change VS. TOP 25% demos/month pill background from #B2EBF2 to #05AB80 (teal/green)
+- [x] Keep revenue pills with existing background colors
