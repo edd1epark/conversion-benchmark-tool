@@ -295,3 +295,8 @@
 - [x] Calculate ratio metric (percentage above/below benchmark) for VS. TOP 25% card
 - [x] Display ratio metric alongside absolute difference (e.g., "35% below average")
 - [x] Update text to show "above" or "below" based on user performance
+
+## Fix Thermometer and Graph Line Colors
+- [x] Fix thermometer fill bar to match bottom rounded shape when CVR is very low
+- [x] Update B2B SaaS Average graph line color in 30% Impact section to #E46BCF (pink) to match chart
+- [x] Update Current CVR graph line color in 30% Impact section to #5189FB (blue) to match Your CVR in chart

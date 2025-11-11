@@ -125,7 +125,7 @@ export default function ProjectionGraph({
           <Line
             type="monotone"
             dataKey="current"
-            stroke="#9333ea"
+            stroke="#5189FB"
             strokeWidth={2}
             name={`Current CVR (${currentCVR.toFixed(2)}%)`}
             dot={false}
@@ -142,7 +142,7 @@ export default function ProjectionGraph({
             <Line
               type="monotone"
               dataKey="benchmark"
-              stroke="#f59e0b"
+              stroke={currentCVR < B2B_AVERAGE ? "#E46BCF" : "#06D6A0"}
               strokeWidth={2}
               strokeDasharray="5 5"
               name={getBenchmarkLabel()}
