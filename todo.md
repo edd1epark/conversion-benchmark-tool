@@ -523,3 +523,10 @@
 - [x] Ensure markers stay close to their actual conversion rate positions
 - [x] Only apply offset when markers would actually overlap visually
 - [x] Test with 2.5% vs 2.3% to verify correct positioning with minimal offset
+
+## Find Optimal Balance: 15% Threshold with 85px Spacing
+- [x] Increase OVERLAP_THRESHOLD from 12% to 15% (catches 1.5% vs 2.3% overlap)
+- [x] Increase STACK_SPACING from 70px to 85px at lg (moderate clearance)
+- [x] Test with 1.5% vs 2.3% (0.8% difference, ~10.7% of scale) to verify overlap is caught
+- [x] Test with 2.5% vs 2.3% (0.2% difference, ~2.7% of scale) to verify overlap is caught
+- [x] Verify markers don't separate excessively when far apart (e.g., 1.5% vs 5.3%)
