@@ -8,6 +8,7 @@ import ProjectionGraph from "@/components/ProjectionGraph";
 import CalendlyWidget from "@/components/CalendlyWidget";
 import { ArrowLeft, Info, Download } from "lucide-react";
 import { generateConversionReportPDF } from "@/lib/generatePDF";
+import { toast } from "sonner";
 
 interface ResultsScreenProps {
   data: {
@@ -41,7 +42,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
   const pipelineImpactTop25 = cvValue > 0 ? additionalConversionsToTop25 * cvValue : 0;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 results-container">
       <Button variant="outline" onClick={onBack} className="gap-2">
         <ArrowLeft className="h-4 w-4" />
         Back to Form
@@ -183,16 +184,25 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
       <div className="flex justify-center">
         <Button
           size="lg"
-          onClick={async () => await generateConversionReportPDF({
-            monthlyTraffic: data.monthlyTraffic,
-            monthlyConversions: data.monthlyConversions,
-            conversionType: data.conversionType,
-            conversionValue: cvValue,
-          })}
+          onClick={async () => {
+            const toastId = toast.loading('Generating PDF with charts...');
+            try {
+              await generateConversionReportPDF({
+                monthlyTraffic: data.monthlyTraffic,
+                monthlyConversions: data.monthlyConversions,
+                conversionType: data.conversionType,
+                conversionValue: cvValue,
+              });
+              toast.success('PDF downloaded successfully!', { id: toastId });
+            } catch (error) {
+              console.error('PDF generation error:', error);
+              toast.error('Failed to generate PDF', { id: toastId });
+            }
+          }}
           className="gap-2 text-lg font-semibold"
         >
           <Download className="h-5 w-5" />
-          Download Report as PDF
+          Download Report as Image
         </Button>
       </div>
 

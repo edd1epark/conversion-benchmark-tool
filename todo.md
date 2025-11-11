@@ -583,3 +583,16 @@
 - [x] Include projection graph in PDF
 - [x] Improve PDF layout and styling for professional appearance
 - [x] Test PDF generation with all visual elements
+
+## Fix PDF Visual Capture
+- [x] Add proper delays to ensure charts are rendered before capture
+- [x] Debug chart element selection with data attributes
+- [x] Add loading state/toast during PDF generation
+- [ ] Test PDF contains actual visual charts (thermometer and projection graph)
+
+## Screenshot-Based Report Download
+- [x] Replace PDF generation with full-page screenshot capture
+- [x] Set viewport to 1440px width for optimal layout
+- [x] Capture entire results page (excluding Calendly section)
+- [x] Download as PNG image with all visual elements
+- [x] Test screenshot download functionality
