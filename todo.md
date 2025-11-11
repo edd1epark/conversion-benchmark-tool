@@ -287,3 +287,11 @@
 - [x] Change VS. B2B SAAS AVG revenue/month pill from #F8BBD0 to #EFA0DE (pink)
 - [x] Change VS. TOP 25% demos/month pill from #B2EBF2 to #5FDABB (mint green)
 - [x] Change VS. TOP 25% revenue/month pill from #B2DFDB to #5FDABB (mint green)
+
+## Show Both VS. Cards Always and Add Ratio Metrics
+- [x] Remove conditional rendering for VS. B2B SAAS AVG card (currently only shows if user CVR < 2.3%)
+- [x] Always show both VS. B2B SAAS AVG and VS. TOP 25% cards regardless of user performance
+- [x] Calculate ratio metric (percentage above/below benchmark) for VS. B2B SAAS AVG card
+- [x] Calculate ratio metric (percentage above/below benchmark) for VS. TOP 25% card
+- [x] Display ratio metric alongside absolute difference (e.g., "35% below average")
+- [x] Update text to show "above" or "below" based on user performance

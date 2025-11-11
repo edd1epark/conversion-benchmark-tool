@@ -20,6 +20,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
   const gapToAverage = userCVR - B2B_AVERAGE;
   const gapToTop = userCVR - TOP_25_PERCENT;
   
+  // Calculate ratio metrics (percentage above/below)
+  const ratioToAverage = ((userCVR - B2B_AVERAGE) / B2B_AVERAGE) * 100;
+  const ratioToTop = ((userCVR - TOP_25_PERCENT) / TOP_25_PERCENT) * 100;
+  
   // Calculate conversion differences
   const demosToAverage = Math.round((B2B_AVERAGE / 100) * monthlyTraffic - (userCVR / 100) * monthlyTraffic);
   const demosToTop = Math.round((TOP_25_PERCENT / 100) * monthlyTraffic - (userCVR / 100) * monthlyTraffic);
@@ -190,14 +194,15 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
 
         {/* Gap Metrics */}
         <div className="flex-1 space-y-4 w-full lg:w-auto">
-          {/* Only show B2B Average gap if user is below average */}
-          {userCVR < B2B_AVERAGE && (
-            <div className="rounded-lg p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
-              <h4 className="text-sm font-semibold mb-2" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
-              <p className="text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
-                {gapToAverage.toFixed(2)}%
-              </p>
-              <p className="text-sm mb-3" style={{ color: AVG_COLOR }}>below average</p>
+          {/* Always show B2B Average gap */}
+          <div className="rounded-lg p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
+            <h4 className="text-sm font-semibold mb-2" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
+            <p className="text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
+              {userCVR >= B2B_AVERAGE ? '+' : ''}{gapToAverage.toFixed(2)}%
+            </p>
+            <p className="text-sm mb-1" style={{ color: AVG_COLOR }}>
+              {Math.abs(ratioToAverage).toFixed(0)}% {userCVR >= B2B_AVERAGE ? 'above' : 'below'} average
+            </p>
               <div className="flex flex-wrap gap-2">
                 <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
                   {demosToAverage} demos/month
@@ -208,17 +213,16 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
                   </div>
                 )}
               </div>
-            </div>
-          )}
+          </div>
 
           {/* Always show Top 25% gap */}
           <div className="rounded-lg p-6" style={{ backgroundColor: '#F0FFFC', border: `2px solid ${TOP_25_COLOR}` }}>
             <h4 className="text-sm font-semibold mb-2" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
             <p className="text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
-              {gapToTop.toFixed(2)}%
+              {userCVR >= TOP_25_PERCENT ? '+' : ''}{gapToTop.toFixed(2)}%
             </p>
-            <p className="text-sm mb-3" style={{ color: TOP_25_COLOR }}>
-              {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
+            <p className="text-sm mb-1" style={{ color: TOP_25_COLOR }}>
+              {Math.abs(ratioToTop).toFixed(0)}% {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
             <div className="flex flex-wrap gap-2">
               <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
