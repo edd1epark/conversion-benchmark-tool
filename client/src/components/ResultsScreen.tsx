@@ -158,7 +158,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
         </div>
 
         {/* Right Column - Calendly Widget (visible on lg+ only) */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block calendly-section">
           <CalendlyWidget />
         </div>
       </div>
@@ -200,7 +200,7 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
       </div>
 
       {/* Calendly Widget - Below projection on tablet/mobile (lg breakpoint and below) */}
-      <div className="lg:hidden">
+      <div className="lg:hidden calendly-section">
         <CalendlyWidget />
       </div>
     </div>

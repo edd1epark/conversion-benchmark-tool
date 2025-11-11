@@ -1,15 +1,37 @@
 /* Print-specific styles */
 @media print {
+  /* Remove min-heights and constrain page dimensions */
+  html,
+  body,
+  #root,
+  *,
+  .min-h-screen {
+    min-height: 0 !important;
+  }
+  
+  body {
+    height: auto !important;
+  }
+  
   /* Hide navigation and interactive elements */
   button,
-  .no-print {
+  .no-print,
+  .print-hide {
     display: none !important;
   }
   
-  /* Hide Calendly widget in print - iframes don't render properly */
+  /* Hide Calendly widget and parent containers in print - iframes don't render properly */
+  .calendly-section,
   .calendly-inline-widget,
+  .calendly-inline-widget *,
   iframe[src*="calendly"] {
     display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
   }
   
   /* Ensure charts and graphs print well */

@@ -25,19 +25,33 @@ export default function InputForm({ onSubmit }: InputFormProps) {
   const [monthlyConversions, setMonthlyConversions] = useState("");
   const [conversionType, setConversionType] = useState<"demos" | "signups">("demos");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     const traffic = parseInt(monthlyTraffic) || 0;
     const conversions = parseInt(monthlyConversions) || 0;
     
     if (traffic > 0 && conversions > 0) {
-      onSubmit({
+      const formData = {
         monthlyTraffic: traffic,
         monthlyConversions: conversions,
         conversionType,
         conversionValue: 0,
-      });
+      };
+
+      // Save to database
+      try {
+        await fetch("/api/save-response", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+      } catch (error) {
+        console.error("Failed to save response:", error);
+        // Continue anyway - don't block user from seeing results
+      }
+
+      onSubmit(formData);
     }
   };
 

@@ -25,7 +25,7 @@ export default function Home() {
     <div className="min-h-screen py-8 md:py-12 relative overflow-hidden">
       {/* Bottom-left grid */}
       <div 
-        className="absolute pointer-events-none" 
+        className="absolute pointer-events-none print-hide" 
         style={{ 
           width: '2795.18px',
           height: '1863.45px',
@@ -39,7 +39,7 @@ export default function Home() {
       
       {/* Top-right grid */}
       <div 
-        className="absolute pointer-events-none" 
+        className="absolute pointer-events-none print-hide" 
         style={{ 
           width: '3726.9px',
           height: '1397.63px',
