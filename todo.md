@@ -235,3 +235,13 @@
 - [x] Revert VS. B2B SAAS AVG card colors back to original orange scheme
 - [x] Revert VS. TOP 25% card colors back to original green scheme
 - [x] Keep all heading updates (results page title, removed duplicate, Calendly heading)
+
+## Implement New Dynamic Color Scheme
+- [x] Set Top 25% color to #09928B (teal)
+- [x] Implement logic to determine which is higher: Your CVR or B2B SaaS Avg
+- [x] Assign #1B86D6 (blue) to whichever is higher (Your CVR or B2B SaaS Avg)
+- [x] Assign #C72660 (pink) to whichever is lower (Your CVR or B2B SaaS Avg)
+- [x] Apply dynamic colors to thermometer chart fill
+- [x] Apply dynamic colors to thermometer chart markers and labels
+- [x] Apply dynamic colors to VS. B2B SAAS AVG card
+- [x] Update VS. TOP 25% card to use teal (#09928B) theme
