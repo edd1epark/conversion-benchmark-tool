@@ -509,3 +509,10 @@
 - [x] Account for both label height (~40px) and wrapped metric height (~40px) plus spacing
 - [x] Test with close conversion rates (1.5% user vs 2.3% avg) to verify no overlap of percentage text
 - [x] Verify "Your CVR" label doesn't cover "2.30%" metric from B2B SaaS Avg marker
+
+## Implement Dynamic Collision Detection
+- [x] Increase OVERLAP_THRESHOLD from 10% to 20% to catch more potential overlaps
+- [x] Increase STACK_SPACING at lg from 100px to 120px for more aggressive separation
+- [ ] Consider alternative: use refs to measure actual element heights and positions if issue persists
+- [x] Test with 1.5% user vs 2.3% avg (close proximity) to verify no overlap
+- [x] Test with 2.5% user vs 2.3% avg (close proximity) to verify no overlap
