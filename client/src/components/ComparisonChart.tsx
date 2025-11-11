@@ -114,7 +114,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             </div>
 
             {/* Thermometer track */}
-            <div className="absolute left-14 w-16 h-full bg-gradient-to-t from-slate-200 via-slate-100 to-slate-50 rounded-full border-2 border-slate-300">
+            <div className="absolute left-14 w-16 h-full bg-gradient-to-t from-slate-200 via-slate-100 to-slate-50 rounded-full border-2 border-slate-300 overflow-hidden">
               {/* Fill based on user's CVR with rounded bottom */}
               <div 
                 className="absolute bottom-0 left-0 right-0 transition-all duration-1000 ease-out rounded-full"

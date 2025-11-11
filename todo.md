@@ -300,3 +300,7 @@
 - [x] Fix thermometer fill bar to match bottom rounded shape when CVR is very low
 - [x] Update B2B SaaS Average graph line color in 30% Impact section to #E46BCF (pink) to match chart
 - [x] Update Current CVR graph line color in 30% Impact section to #5189FB (blue) to match Your CVR in chart
+
+## Fix Thermometer Fill Bar Overflow
+- [x] Add overflow-hidden to thermometer track container to clip fill bar properly
+- [x] Ensure fill bar conforms to rounded bottom shape without overflowing
