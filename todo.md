@@ -556,3 +556,8 @@
 - [x] Reduce STACK_SPACING from 50px to 35px
 - [x] Test with 1.5% CVR to verify no overlap at very tight spacing
 - [x] Verify this is the minimum viable spacing that prevents overlap
+
+## Remove Awkward Top Gap in Form Card
+- [x] Find form container with excessive top padding (CardContent with pt-8)
+- [x] Reduce top padding from pt-8 to pt-6 to eliminate gap
+- [x] Verify form looks balanced without awkward white space at top
