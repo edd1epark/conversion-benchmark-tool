@@ -503,3 +503,9 @@
 - [x] Use window.innerWidth with resize listener to determine current breakpoint
 - [x] Increase vertical offset from 18px to 60px at lg (1024-1280px) to account for wrapped metric height
 - [x] Test with close conversion rates (e.g., 2.2%, 2.3%, 2.4%) at lg breakpoint to verify no overlap
+
+## Increase Vertical Offset to Prevent Wrapped Metric Text Overlap
+- [x] Increase STACK_SPACING from 60px to 100px at lg breakpoint
+- [x] Account for both label height (~40px) and wrapped metric height (~40px) plus spacing
+- [x] Test with close conversion rates (1.5% user vs 2.3% avg) to verify no overlap of percentage text
+- [x] Verify "Your CVR" label doesn't cover "2.30%" metric from B2B SaaS Avg marker
