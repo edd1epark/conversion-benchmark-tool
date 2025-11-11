@@ -370,3 +370,10 @@
 - [x] Metrics should only go inline at 1280px+ when there's enough room
 - [x] Verify VS module text no longer breaks at 1024px breakpoint
 - [x] Test at 1024px and 1280px to confirm proper layout
+
+## Optimize Thermometer Width to Prevent VS Module Breaking
+- [x] Reduce thermometer width at md/lg breakpoints when metrics are wrapped
+- [x] Make thermometer narrower (w-64 at md, w-72 at lg) to give VS modules more space
+- [x] Ensure VS modules can expand to fill available horizontal space
+- [x] Prevent text wrapping in VS modules ("35% below average", "72% below top performers")
+- [x] Test at 1024px to verify VS modules display without breaking
