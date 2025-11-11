@@ -320,3 +320,8 @@
 - [x] Reduce gap between logo and headline
 - [x] Tighten text wrapping on headline and subheadline
 - [x] Improve overall visual hierarchy
+
+## Fix Logo and Headline Text Wrap
+- [x] Replace incorrect custom logo with actual Grox Logo.svg file
+- [x] Reduce max-width of headline container so "B2B SaaS Benchmarks" wraps to next line on desktop
+- [x] Ensure logo displays correctly with proper sizing

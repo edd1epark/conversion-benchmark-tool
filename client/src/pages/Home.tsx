@@ -60,10 +60,10 @@ export default function Home() {
 
         {!showResults && (
           <div className="text-center mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight max-w-3xl mx-auto">
               Compare my Conversion Rate to B2B SaaS Benchmarks
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
               This tool helps you compare your website visitor to demo/signup conversion rates to B2B SaaS benchmarks. Input your numbers to see results
             </p>
           </div>
