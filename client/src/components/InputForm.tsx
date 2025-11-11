@@ -44,7 +44,7 @@ export default function InputForm({ onSubmit }: InputFormProps) {
   return (
     <div className="flex justify-center items-start min-h-[60vh]">
       <Card className="w-full max-w-2xl shadow-lg">
-        <CardContent className="pt-6">
+        <CardContent className="pt-4">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="traffic" className="text-base font-semibold text-slate-900">
