@@ -516,3 +516,10 @@
 - [ ] Consider alternative: use refs to measure actual element heights and positions if issue persists
 - [x] Test with 1.5% user vs 2.3% avg (close proximity) to verify no overlap
 - [x] Test with 2.5% user vs 2.3% avg (close proximity) to verify no overlap
+
+## Reduce Offset Values for Accurate Positioning
+- [x] Reduce OVERLAP_THRESHOLD from 20% back to 12% (more conservative detection)
+- [x] Reduce STACK_SPACING from 120px to 70px at lg (minimal clearance only)
+- [x] Ensure markers stay close to their actual conversion rate positions
+- [x] Only apply offset when markers would actually overlap visually
+- [x] Test with 2.5% vs 2.3% to verify correct positioning with minimal offset

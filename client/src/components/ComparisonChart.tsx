@@ -63,10 +63,10 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
 
   // Get vertical offset for label when markers overlap
   const getLabelVerticalOffset = (value: number) => {
-    const OVERLAP_THRESHOLD = 20; // 20% of scale - more aggressive detection
+    const OVERLAP_THRESHOLD = 12; // 12% of scale - conservative detection for actual overlaps only
     // Increase spacing at lg breakpoint (1024-1280px) where metrics wrap vertically
     const isLgBreakpoint = windowWidth >= 1024 && windowWidth < 1280;
-    const STACK_SPACING = isLgBreakpoint ? 120 : 18; // 120px for wrapped metrics (label + metric height + extra clearance), 18px for inline
+    const STACK_SPACING = isLgBreakpoint ? 70 : 18; // 70px for wrapped metrics (minimal clearance), 18px for inline
     
     // Check which markers are close to this one
     let offset = 0;
