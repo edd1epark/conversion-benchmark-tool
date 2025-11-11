@@ -432,3 +432,10 @@
 - [x] Add max-w-2xl to VS modules in single-column, lg:max-w-none for 2-column
 - [x] Gap already optimized: gap-4 (base), md:gap-6 (768-1023px), lg:gap-4, xl:gap-6
 - [x] Test at mobile and tablet to verify VS modules no longer look stretched
+
+## Fix VS Module Stretching in Single-Column (Actual Fix)
+- [x] Identified issue: md:flex-col was wrapping metrics at 768-1023px (single-column range)
+- [x] Changed marker layout: flex-row (0-1023px single-column), lg:flex-col (1024-1279px 2-column), xl:flex-row (1280px+ 2-column)
+- [x] Changed VS modules max-width from max-w-2xl to max-w-lg for more restrictive width
+- [x] Increased gap in single-column: gap-6 (base/md), lg:gap-4, xl:gap-6
+- [x] Test in browser to confirm metrics inline and VS modules at reasonable width
