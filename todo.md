@@ -394,3 +394,11 @@
 - [x] Ensure VS modules utilize the visible gap between thermometer and modules
 - [x] Verify "35% below average" and "72% below top performers" display without breaking
 - [x] Test at 1024px to confirm VS modules fill available space
+
+## Investigate and Fix Root Cause of VS Module Width Constraint
+- [x] Check ResultsScreen for max-width constraints on Comparison section
+- [x] Identified CardContent default px-6 padding as constraint
+- [x] Increase VS module flex ratio from flex-[2] to flex-[4] for aggressive expansion
+- [x] Reduce CardContent padding at md/lg breakpoints (md:px-3 lg:px-4 xl:px-6)
+- [x] Verify VS modules can truly fill available horizontal space
+- [x] Test at 1024px to confirm text no longer breaks

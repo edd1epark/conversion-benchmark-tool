@@ -193,7 +193,7 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
         </div>
 
         {/* Gap Metrics */}
-        <div className="flex-[2] space-y-3 md:space-y-4 w-full md:min-w-0">
+        <div className="flex-[4] space-y-3 md:space-y-4 w-full md:min-w-0">
           {/* Always show B2B Average gap */}
           <div className="rounded-lg p-3 md:p-3 lg:p-3 xl:p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
             <h4 className="text-xs font-semibold mb-1" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
