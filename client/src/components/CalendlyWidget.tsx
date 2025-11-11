@@ -20,7 +20,7 @@ export default function CalendlyWidget() {
   return (
     <Card className="shadow-lg h-full flex flex-col">
       <CardHeader>
-        <CardTitle className="text-2xl">Convert 30% More in 90 Days, or you don't pay.</CardTitle>
+        <CardTitle className="text-2xl">Convert 30% More in 90 Days, Fully Guaranteed</CardTitle>
         <CardDescription className="text-base">
           Book a strategy call and get personalized tips on how you can boost your website conversions.
         </CardDescription>

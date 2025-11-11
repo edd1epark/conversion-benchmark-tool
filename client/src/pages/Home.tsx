@@ -70,7 +70,7 @@ export default function Home() {
         {showResults && (
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Your Conversion Rate Analysis
+              Your Conversion Rate Report
             </h1>
           </div>
         )}

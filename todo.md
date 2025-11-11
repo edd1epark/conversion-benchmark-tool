@@ -214,3 +214,16 @@
 - [x] Show 6-month cumulative impact
 - [x] Add revenue metrics for monthly, 3-month, and 6-month when conversion value is entered
 - [x] Use attractive gradient design consistent with existing sections
+
+## Update Headings and Color Scheme
+- [x] Change results page title from "Your Conversion Rate Analysis" to "Your Conversion Rate Report"
+- [x] Remove duplicate "Conversion Rate Comparison" heading inside the card
+- [x] Update Calendly heading to "Convert 30% More in 90 Days, Fully Guaranteed"
+- [x] Update Your CVR color to #F4B4DD (pink) in thermometer chart
+- [x] Update Your CVR label background to #F4B4DD
+- [x] Update B2B SaaS Avg color to #ADA8E1 (purple) in thermometer chart
+- [x] Update B2B SaaS Avg label background to #ADA8E1
+- [x] Update Top 25% color to #619CE6 (blue) in thermometer chart
+- [x] Update Top 25% label background to #619CE6
+- [x] Update VS. B2B SAAS AVG card border/background to match #ADA8E1 theme
+- [x] Update VS. TOP 25% card border/background to match #619CE6 theme
