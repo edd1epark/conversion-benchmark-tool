@@ -199,11 +199,11 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
               </p>
               <p className="text-sm mb-3" style={{ color: AVG_COLOR }}>below average</p>
               <div className="flex flex-wrap gap-2">
-                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#F8BBD0', color: 'white' }}>
+                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
                   {demosToAverage} demos/month
                 </div>
                 {conversionValue > 0 && (
-                  <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#F8BBD0', color: 'white' }}>
+                  <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
                     {formatRevenue(revenueToAverage / 12)}/month
                   </div>
                 )}
@@ -221,11 +221,11 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
               {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
             <div className="flex flex-wrap gap-2">
-              <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#B2EBF2', color: 'white' }}>
+              <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
                 {Math.abs(demosToTop)} demos/month
               </div>
               {conversionValue > 0 && (
-                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#B2DFDB', color: 'white' }}>
+                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
                   {formatRevenue(revenueToTop / 12)}/month
                 </div>
               )}
