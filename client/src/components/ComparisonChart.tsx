@@ -134,17 +134,17 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: TOP_25_COLOR }} />
               <div 
-                className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(TOP_25_PERCENT)}px)`,
                   transition: 'transform 0.3s ease'
                 }}
               >
-                <div className="text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md" style={{ backgroundColor: TOP_25_COLOR }}>
+                <div className="text-white px-3 py-1.5 rounded text-xs md:text-sm font-bold whitespace-nowrap shadow-md" style={{ backgroundColor: TOP_25_COLOR }}>
                   Top 25%
                 </div>
-                <span className="text-lg font-bold" style={{ color: TOP_25_COLOR }}>{TOP_25_PERCENT.toFixed(2)}%</span>
+                <span className="text-base md:text-lg font-bold" style={{ color: TOP_25_COLOR }}>{TOP_25_PERCENT.toFixed(2)}%</span>
               </div>
             </div>
 
@@ -155,17 +155,17 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: AVG_COLOR }} />
               <div 
-                className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(B2B_AVERAGE)}px)`,
                   transition: 'transform 0.3s ease'
                 }}
               >
-                <div className="text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-md" style={{ backgroundColor: AVG_COLOR }}>
+                <div className="text-white px-3 py-1.5 rounded text-xs md:text-sm font-bold whitespace-nowrap shadow-md" style={{ backgroundColor: AVG_COLOR }}>
                   B2B SaaS Avg
                 </div>
-                <span className="text-lg font-bold" style={{ color: AVG_COLOR }}>{B2B_AVERAGE.toFixed(2)}%</span>
+                <span className="text-base md:text-lg font-bold" style={{ color: AVG_COLOR }}>{B2B_AVERAGE.toFixed(2)}%</span>
               </div>
             </div>
 
@@ -176,17 +176,17 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
             >
               <div className="w-16 h-1" style={{ backgroundColor: USER_CVR_COLOR }} />
               <div 
-                className="flex items-center gap-2 flex-shrink-0 transition-all duration-300"
+                className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 flex-shrink-0 transition-all duration-300"
                 style={{ 
                   marginLeft: '8px',
                   transform: `translateY(${getLabelVerticalOffset(userCVR)}px)`,
                   transition: 'transform 0.3s ease'
                 }}
               >
-                <div className="text-white px-3 py-1.5 rounded text-sm font-bold whitespace-nowrap shadow-lg" style={{ backgroundColor: USER_CVR_COLOR }}>
+                <div className="text-white px-3 py-1.5 rounded text-xs md:text-sm font-bold whitespace-nowrap shadow-lg" style={{ backgroundColor: USER_CVR_COLOR }}>
                   Your CVR
                 </div>
-                <span className="text-lg font-bold" style={{ color: USER_CVR_COLOR }}>{userCVR.toFixed(2)}%</span>
+                <span className="text-base md:text-lg font-bold" style={{ color: USER_CVR_COLOR }}>{userCVR.toFixed(2)}%</span>
               </div>
             </div>
           </div>
@@ -195,22 +195,22 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
         {/* Gap Metrics */}
         <div className="flex-1 space-y-4 w-full lg:w-auto">
           {/* Always show B2B Average gap */}
-          <div className="rounded-lg p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
-            <h4 className="text-sm font-semibold mb-2" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
-            <p className="text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
+          <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#FFF0F5', border: `2px solid ${AVG_COLOR}` }}>
+            <h4 className="text-xs md:text-sm font-semibold mb-2" style={{ color: AVG_COLOR }}>VS. B2B SAAS AVG</h4>
+            <p className="text-2xl md:text-4xl font-bold mb-1" style={{ color: AVG_COLOR }}>
               {userCVR >= B2B_AVERAGE ? '+' : ''}{gapToAverage.toFixed(2)}%
             </p>
-            <p className="text-sm mb-1" style={{ color: AVG_COLOR }}>
+            <p className="text-xs md:text-sm mb-1" style={{ color: AVG_COLOR }}>
               {Math.abs(ratioToAverage).toFixed(0)}% {userCVR >= B2B_AVERAGE ? 'above' : 'below'} average
             </p>
               <div className="flex flex-wrap gap-2">
                 {demosToAverage > 0 && (
-                  <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
+                  <div className="px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
                     {demosToAverage} {conversionType}/month
                   </div>
                 )}
                 {conversionValue > 0 && demosToAverage > 0 && (
-                  <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
+                  <div className="px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap" style={{ backgroundColor: '#EFA0DE', color: 'white' }}>
                     {formatRevenue(revenueToAverage / 12)}/month
                   </div>
                 )}
@@ -218,22 +218,22 @@ export default function ComparisonChart({ userCVR, monthlyTraffic, conversionVal
           </div>
 
           {/* Always show Top 25% gap */}
-          <div className="rounded-lg p-6" style={{ backgroundColor: '#F0FFFC', border: `2px solid ${TOP_25_COLOR}` }}>
-            <h4 className="text-sm font-semibold mb-2" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
-            <p className="text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
+          <div className="rounded-lg p-4 md:p-6" style={{ backgroundColor: '#F0FFFC', border: `2px solid ${TOP_25_COLOR}` }}>
+            <h4 className="text-xs md:text-sm font-semibold mb-2" style={{ color: TOP_25_COLOR }}>VS. TOP 25%</h4>
+            <p className="text-2xl md:text-4xl font-bold mb-1" style={{ color: TOP_25_COLOR }}>
               {userCVR >= TOP_25_PERCENT ? '+' : ''}{gapToTop.toFixed(2)}%
             </p>
-            <p className="text-sm mb-1" style={{ color: TOP_25_COLOR }}>
+            <p className="text-xs md:text-sm mb-1" style={{ color: TOP_25_COLOR }}>
               {Math.abs(ratioToTop).toFixed(0)}% {userCVR >= TOP_25_PERCENT ? 'above' : 'below'} top performers
             </p>
             <div className="flex flex-wrap gap-2">
               {demosToTop > 0 && (
-                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
+                <div className="px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
                   {Math.abs(demosToTop)} {conversionType}/month
                 </div>
               )}
               {conversionValue > 0 && demosToTop > 0 && (
-                <div className="px-4 py-2 rounded-full font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
+                <div className="px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap" style={{ backgroundColor: '#5FDABB', color: 'white' }}>
                   {formatRevenue(revenueToTop / 12)}/month
                 </div>
               )}

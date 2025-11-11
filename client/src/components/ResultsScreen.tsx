@@ -46,8 +46,9 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
         Back to Form
       </Button>
 
+      {/* Main Content: 2-column on lg+, single column below */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Left Side - Comparison Metrics */}
+        {/* Left Column - Comparison Metrics */}
         <div className="space-y-6">
           <Card className="shadow-lg">
             <CardHeader>
@@ -154,13 +155,13 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
           </Card>
         </div>
 
-        {/* Right Side - Calendly Widget */}
-        <div>
+        {/* Right Column - Calendly Widget (visible on lg+ only) */}
+        <div className="hidden lg:block">
           <CalendlyWidget />
         </div>
       </div>
 
-      {/* Bottom Section - Projection Graph */}
+      {/* Projection Graph - Full width */}
       <Card className="shadow-lg">
         <CardHeader>
           <CardTitle className="text-2xl">
@@ -176,6 +177,11 @@ export default function ResultsScreen({ data, onBack }: ResultsScreenProps) {
           />
         </CardContent>
       </Card>
+
+      {/* Calendly Widget - Below projection on tablet/mobile (lg breakpoint and below) */}
+      <div className="lg:hidden">
+        <CalendlyWidget />
+      </div>
     </div>
   );
 }

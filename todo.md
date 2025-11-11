@@ -331,3 +331,12 @@
 - [x] Update VS. cards to show "demos/month" when user selects "Demos" as conversion type
 - [x] Hide conversion pill badge when user CVR is above the benchmark (no negative values)
 - [x] Only show conversion pill when user is below benchmark and needs improvement
+
+## Responsive Design Improvements
+- [x] Keep VS modules next to thermometer chart on all screen sizes except mobile
+- [x] Above 1024px: Show Conversion Rate Comparison (left) and Calendly (right) side by side
+- [x] Below 1024px: Single column layout with Calendly after projection section
+- [x] Handle narrow breakpoints: Wrap percentage values below marker labels
+- [x] Reduce font sizes in VS modules for better fit at medium breakpoints
+- [x] Wrap text in VS modules as needed to prevent overflow
+- [x] Test all breakpoints for proper layout and readability
