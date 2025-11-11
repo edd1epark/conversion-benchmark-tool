@@ -227,3 +227,11 @@
 - [x] Update Top 25% label background to #619CE6
 - [x] Update VS. B2B SAAS AVG card border/background to match #ADA8E1 theme
 - [x] Update VS. TOP 25% card border/background to match #619CE6 theme
+
+## Revert Color Changes (Keep Heading Updates)
+- [x] Revert Your CVR color back to original blue
+- [x] Revert B2B SaaS Avg color back to original orange
+- [x] Revert Top 25% color back to original green
+- [x] Revert VS. B2B SAAS AVG card colors back to original orange scheme
+- [x] Revert VS. TOP 25% card colors back to original green scheme
+- [x] Keep all heading updates (results page title, removed duplicate, Calendly heading)
