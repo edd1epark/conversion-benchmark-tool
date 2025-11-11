@@ -481,3 +481,10 @@
 - [x] Only wrap metrics at 768-1024px (md) where space is tightest
 - [x] Increase gap from md:gap-16 to md:gap-24 (96px) to prevent overlap
 - [x] Test at 540px, 768px, 900px, 1024px to verify no overlap between thermometer metrics and VS modules
+
+## Keep Metrics Wrapped at 1024-1280px and Increase Gap
+- [x] Change metric layout from flex-row md:flex-col lg:flex-row xl:flex-row to flex-row md:flex-col xl:flex-row
+- [x] Keep metrics wrapped (flex-col) at both md (768-1024px) and lg (1024-1280px) ranges
+- [x] Only unwrap metrics at xl (1280px+) where there's sufficient space
+- [x] Increase lg:gap-4 to lg:gap-12 (48px) for better spacing at 1024-1280px
+- [x] Test at 1024px, 1115px, 1200px, 1280px to verify no overlap and proper spacing
