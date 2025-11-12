@@ -648,3 +648,9 @@
 - [x] Update InputForm to call API on submission (fetch /api/save-response)
 - [x] Test form submission saves to database (API endpoint returns 404 - needs server proxy)
 - [x] Verify site still works after changes (frontend works, API not connected)
+
+## Update Favicon
+- [x] Copy custom favicon to public directory
+- [x] Update HTML favicon reference
+- [ ] Push changes to GitHub
+- [ ] Update favicon in Manus Management UI Settings
